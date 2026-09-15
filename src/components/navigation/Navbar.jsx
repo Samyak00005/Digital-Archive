@@ -1,33 +1,32 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <header className="archive-navbar archive-navbar--dark">
       <div className="archive-page">
         <nav className="archive-navbar-inner">
-          {/* Brand */}
-          <a
-            href="/"
+          <Link
+            to="/"
             className="archive-navbar-brand"
             aria-label="The Digital Archive — Home"
           >
             THE DIGITAL ARCHIVE
-          </a>
+          </Link>
 
-          {/* Desktop Navigation */}
           <div className="archive-navbar-links">
-            <a href="#work" className="archive-navbar-link">
+            <Link to="/#work" className="archive-navbar-link">
               WORK
-            </a>
+            </Link>
 
-            <a href="#collections" className="archive-navbar-link">
+            <Link to="/#collections" className="archive-navbar-link">
               COLLECTIONS
-            </a>
+            </Link>
 
-            <a href="#experiments" className="archive-navbar-link">
-              EXPERIMENTS
-            </a>
+            <Link to="/projects" className="archive-navbar-link">
+              ARCHIVE
+            </Link>
           </div>
 
-          {/* Right Side */}
           <div className="archive-navbar-meta">
             <span className="archive-navbar-year">2026</span>
 

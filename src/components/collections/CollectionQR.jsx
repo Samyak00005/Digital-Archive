@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function CollectionQR() {
   return (
     <section className="archive-collection" id="collections">
@@ -6,39 +8,43 @@ function CollectionQR() {
           <span className="archive-meta">06 / COLLECTIONS</span>
 
           <span className="archive-meta archive-collection-header-right">
-            SMALLER WORKS
+            SMALLER WORK
           </span>
         </div>
 
         <div className="archive-collection-intro">
           <div className="archive-collection-intro-label">
-            <span className="archive-meta">01 / MINI PROJECT</span>
+            <span className="archive-meta">MINI PROJECT / 01</span>
           </div>
 
-          <div className="archive-collection-heading">
-            <h2>
-              Small things,
-              <br />
-              carefully made.
-            </h2>
-          </div>
+          <h2>
+            Small things,
+            <br />
+            carefully made.
+          </h2>
         </div>
 
-        <article className="archive-collection-card">
-          <div className="archive-collection-image">
+        <div className="archive-collection-project">
+          <Link
+            to="/project/qr-studio"
+            className="archive-collection-image"
+            aria-label="View QR Studio project"
+          >
             <img
               src="/archive/qr-studio/desktop.webp"
-              alt="QR Studio website"
+              alt="QR Studio website preview"
             />
-          </div>
+
+            <div className="archive-collection-image-overlay" />
+
+            <span className="archive-collection-image-label">
+              VIEW PROJECT ↗
+            </span>
+          </Link>
 
           <div className="archive-collection-info">
-            <div className="archive-collection-number">
-              <span>01</span>
-            </div>
-
             <div className="archive-collection-title">
-              <span className="archive-meta">UTILITY / WEB APP</span>
+              <span className="archive-meta">04 / UTILITY</span>
 
               <h3>QR Studio</h3>
 
@@ -60,12 +66,25 @@ function CollectionQR() {
               </div>
             </div>
 
-            <a href="#" className="archive-collection-link">
+            <Link
+              to="/project/qr-studio"
+              className="archive-collection-link"
+            >
               <span>VIEW PROJECT</span>
-              <span className="archive-collection-link-arrow">↗</span>
-            </a>
+              <span>↗</span>
+            </Link>
           </div>
-        </article>
+        </div>
+
+        <div className="archive-collection-footer">
+          <span className="archive-meta">COLLECTION / 01</span>
+
+          <p>
+            Small experiments
+            <br />
+            become part of the archive.
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import { projects } from "../../data/projects";
 function ProjectDetail() {
   const { slug } = useParams();
 
-  const project = projects.find((item) => item.id === "qr-studio");
+  const project = projects.find((item) => item.id === slug);
 
   if (!project) {
     return (
