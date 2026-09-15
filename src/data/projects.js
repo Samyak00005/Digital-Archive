@@ -1,0 +1,73 @@
+export const projects = [
+    {
+        id: "retrotoonz",
+        number: "01",
+        title: "RetroToonz",
+        type: "Web App",
+        category: "Streaming Platform",
+        year: "2026",
+        image: "/archive/retrotoonz/desktop.webp",
+        url: "https://www.retrotoonz.in",
+        description:
+            "A cartoon streaming platform built around a nostalgic viewing experience.",
+        role:
+            "Design, frontend development & product implementation",
+        stack:
+            "React, Vite, Tailwind CSS, Node.js",
+        theme: "dark",
+    },
+
+    {
+        id: "heywalls",
+        number: "02",
+        title: "Heywalls",
+        type: "Website",
+        category: "Wallpaper Platform",
+        year: "2026",
+        image: "/archive/heywalls/desktop.webp",
+        url: "https://heywalls.vercel.app",
+        description:
+            "A wallpaper platform created to discover, explore, and live with better digital imagery.",
+        role:
+            "Design & frontend development",
+        stack:
+            "React, Vite, Tailwind CSS",
+        theme: "light",
+    },
+
+    {
+        id: "localsewa",
+        number: "03",
+        title: "LocalSewa",
+        type: "Web App",
+        category: "Local Services Platform",
+        year: "2026",
+        image: "/archive/localsewa/desktop.webp",
+        url: "https://localsewa.com",
+        description:
+            "A platform for discovering and requesting services from local providers.",
+        role:
+            "Design, frontend development & product implementation",
+        stack:
+            "React, Vite, Tailwind CSS",
+        theme: "green",
+    },
+
+    {
+        id: "qr-studio",
+        number: "04",
+        title: "QR Studio",
+        type: "Mini Project",
+        category: "Utility",
+        year: "2026",
+        image: "/archive/qr-studio/desktop.webp",
+        url: "https://qr-studio-nine-rho.vercel.app",
+        description:
+            "A simple QR utility built to create, customize, and download QR codes.",
+        role:
+            "Design & frontend development",
+        stack:
+            "React, Vite, Tailwind CSS",
+        theme: "light",
+    },
+];

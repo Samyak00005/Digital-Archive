@@ -1,9 +1,12 @@
-import Intro from "./components/common/Intro.jsx";
-import Hero from "./components/hero/Hero.jsx";
-import Navbar from "./components/navigation/Navbar.jsx";
-import FeaturedProject from "./components/projects/FeaturedProjects.jsx";
+import ProjectArchive from "./components/archive/ProjectArchive";
+import CollectionQR from "./components/collections/CollectionQR";
+import Intro from "./components/common/Intro";
+import Hero from "./components/hero/Hero";
+import Navbar from "./components/navigation/Navbar";
+import FeaturedProject from "./components/projects/FeaturedProjects";
 import FeaturedProjectFull from "./components/projects/FeaturedProjectFull";
 import FeaturedProjectReverse from "./components/projects/FeaturedProjectReverse";
+import VisualIndex from "./components/gallery/VisualIndex";
 
 function App() {
   return (
@@ -13,7 +16,10 @@ function App() {
       <Intro />
       <FeaturedProject />
       <FeaturedProjectReverse />
-      <FeaturedProjectFull />{" "}
+      <FeaturedProjectFull />
+      <CollectionQR />
+      <ProjectArchive />
+      <VisualIndex />
     </main>
   );
 }
