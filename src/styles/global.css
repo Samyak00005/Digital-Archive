@@ -952,3 +952,992 @@ button {
     scroll-behavior: auto !important;
   }
 }
+/* =========================================================
+   INTRO / MANIFESTO — v1.6
+   ========================================================= */
+
+.archive-intro {
+  position: relative;
+
+  background: var(--archive-ivory);
+  color: var(--archive-black);
+
+  overflow: hidden;
+}
+
+.archive-intro-grid {
+  display: grid;
+
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  column-gap: var(--grid-gap);
+  row-gap: 40px;
+
+  min-height: 85vh;
+
+  align-content: center;
+
+  padding-block: var(--section-space);
+}
+
+/* =========================================================
+   INTRO — LABEL
+   ========================================================= */
+
+.archive-intro-label {
+  grid-column: 1 / span 3;
+
+  align-self: start;
+}
+
+/* =========================================================
+   INTRO — STATEMENT
+   ========================================================= */
+
+.archive-intro-statement {
+  grid-column: 4 / span 8;
+}
+
+.archive-intro-statement h2 {
+  margin: 0;
+
+  max-width: 1000px;
+
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 7.5vw, 8rem);
+  font-weight: 500;
+
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+}
+
+/* =========================================================
+   INTRO — COPY
+   ========================================================= */
+
+.archive-intro-copy {
+  grid-column: 4 / span 4;
+
+  margin-top: 20px;
+}
+
+.archive-intro-copy p {
+  margin: 0;
+
+  max-width: 430px;
+
+  font-size: clamp(16px, 1.35vw, 20px);
+  line-height: 1.5;
+
+  color: rgba(11, 12, 10, 0.72);
+}
+
+/* =========================================================
+   INTRO — YEAR
+   ========================================================= */
+
+.archive-intro-year {
+  grid-column: 10 / span 3;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-top: 24px;
+}
+
+.archive-intro-year .archive-meta {
+  color: rgba(11, 12, 10, 0.5);
+}
+
+.archive-intro-arrow {
+  display: inline-flex;
+
+  font-size: 28px;
+  line-height: 1;
+
+  transition: transform var(--transition-medium);
+}
+
+.archive-intro-year:hover .archive-intro-arrow {
+  transform: translateY(6px);
+}
+
+/* =========================================================
+   INTRO — TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .archive-intro-grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .archive-intro-label {
+    grid-column: 1 / span 2;
+  }
+
+  .archive-intro-statement {
+    grid-column: 3 / span 6;
+  }
+
+  .archive-intro-copy {
+    grid-column: 3 / span 4;
+  }
+
+  .archive-intro-year {
+    grid-column: 7 / span 2;
+  }
+}
+
+/* =========================================================
+   INTRO — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .archive-intro-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    min-height: auto;
+
+    row-gap: 50px;
+
+    padding-block: 100px;
+  }
+
+  .archive-intro-label {
+    grid-column: span 4;
+  }
+
+  .archive-intro-statement {
+    grid-column: span 4;
+  }
+
+  .archive-intro-statement h2 {
+    font-size: clamp(3.4rem, 15vw, 5.5rem);
+
+    line-height: 0.88;
+  }
+
+  .archive-intro-copy {
+    grid-column: 1 / span 3;
+
+    margin-top: 0;
+  }
+
+  .archive-intro-copy p {
+    font-size: 16px;
+  }
+
+  .archive-intro-year {
+    grid-column: span 4;
+
+    margin-top: 10px;
+  }
+}
+
+/* =========================================================
+   FEATURED PROJECT — v1.7
+   RetroToonz
+   ========================================================= */
+
+.archive-featured {
+  position: relative;
+
+  background: var(--archive-ivory);
+  color: var(--archive-black);
+
+  overflow: hidden;
+
+  padding-block: var(--section-space);
+}
+
+/* =========================================================
+   FEATURED — HEADER
+   ========================================================= */
+
+.archive-featured-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.archive-featured-header-right {
+  color: rgba(11, 12, 10, 0.45);
+}
+
+/* =========================================================
+   FEATURED — IMAGE
+   ========================================================= */
+
+.archive-featured-image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--archive-black);
+}
+
+.archive-featured-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 1.2s var(--ease-archive);
+}
+
+.archive-featured-image:hover img {
+  transform: scale(1.015);
+}
+
+/* ---------- Image Overlay ---------- */
+
+.archive-featured-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.16));
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   FEATURED — INFORMATION
+   ========================================================= */
+
+.archive-featured-info {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    3fr
+    3fr
+    2fr
+    2fr;
+
+  column-gap: var(--grid-gap);
+
+  padding-top: 32px;
+}
+
+/* =========================================================
+   FEATURED — NUMBER
+   ========================================================= */
+
+.archive-featured-number span {
+  font-family: var(--font-display);
+
+  font-size: 42px;
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   FEATURED — TITLE
+   ========================================================= */
+
+.archive-featured-title h2 {
+  margin: 0 0 8px;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(2.8rem, 4vw, 4.8rem);
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.035em;
+}
+
+.archive-featured-title .archive-meta {
+  color: rgba(11, 12, 10, 0.48);
+}
+
+/* =========================================================
+   FEATURED — DESCRIPTION
+   ========================================================= */
+
+.archive-featured-description {
+  padding-top: 5px;
+}
+
+.archive-featured-description p {
+  max-width: 340px;
+
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  color: rgba(11, 12, 10, 0.7);
+}
+
+/* =========================================================
+   FEATURED — META
+   ========================================================= */
+
+.archive-featured-meta {
+  display: flex;
+  gap: 32px;
+
+  padding-top: 5px;
+}
+
+.archive-featured-meta .archive-meta {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: rgba(11, 12, 10, 0.45);
+}
+
+.archive-featured-meta p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   FEATURED — LINK
+   ========================================================= */
+
+.archive-featured-link {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  padding-top: 5px;
+
+  font-family: var(--font-sans);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  transition: opacity var(--transition-fast);
+}
+
+.archive-featured-link:hover {
+  opacity: 0.55;
+}
+
+.archive-featured-link-arrow {
+  font-size: 17px;
+  line-height: 0.7;
+
+  transition: transform var(--transition-medium);
+}
+
+.archive-featured-link:hover .archive-featured-link-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* =========================================================
+   FEATURED — TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .archive-featured-info {
+    grid-template-columns:
+      1fr
+      3fr
+      2fr
+      2fr;
+
+    row-gap: 30px;
+  }
+
+  .archive-featured-number {
+    grid-row: span 2;
+  }
+
+  .archive-featured-title {
+    grid-column: span 2;
+  }
+
+  .archive-featured-description {
+    grid-column: 2 / span 2;
+  }
+
+  .archive-featured-meta {
+    grid-column: 4;
+  }
+
+  .archive-featured-link {
+    grid-column: 3 / span 2;
+  }
+}
+
+/* =========================================================
+   FEATURED — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .archive-featured {
+    padding-block: 80px;
+  }
+
+  .archive-featured-header {
+    margin-bottom: 20px;
+  }
+
+  .archive-featured-header-right {
+    display: none;
+  }
+
+  .archive-featured-image {
+    aspect-ratio: 4 / 3;
+
+    border-radius: var(--radius-md);
+  }
+
+  .archive-featured-info {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 24px 16px;
+
+    padding-top: 24px;
+  }
+
+  .archive-featured-number {
+    grid-column: span 1;
+  }
+
+  .archive-featured-number span {
+    font-size: 30px;
+  }
+
+  .archive-featured-title {
+    grid-column: 2 / span 3;
+  }
+
+  .archive-featured-title h2 {
+    font-size: clamp(2.8rem, 14vw, 5rem);
+  }
+
+  .archive-featured-description {
+    grid-column: 2 / span 3;
+  }
+
+  .archive-featured-meta {
+    grid-column: 2 / span 3;
+
+    gap: 40px;
+  }
+
+  .archive-featured-link {
+    grid-column: 2 / span 3;
+
+    justify-content: flex-start;
+
+    padding-top: 8px;
+  }
+}
+
+/* =========================================================
+   HEYWALLS FEATURED — v1.8
+   Reverse Editorial Composition
+   ========================================================= */
+
+.archive-featured--reverse {
+  padding-top: 0;
+}
+
+.archive-featured-reverse-grid {
+  display: grid;
+
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  gap: var(--grid-gap);
+
+  align-items: center;
+}
+
+/* =========================================================
+   INFORMATION
+   ========================================================= */
+
+.archive-featured-reverse-info {
+  grid-column: 1 / span 4;
+
+  display: grid;
+
+  grid-template-columns: 1fr 3fr;
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+.archive-featured-reverse-info .archive-featured-number {
+  grid-column: 1;
+}
+
+.archive-featured-reverse-title {
+  grid-column: 2;
+}
+
+.archive-featured-reverse-title .archive-meta {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: rgba(11, 12, 10, 0.45);
+}
+
+.archive-featured-reverse-title h2 {
+  margin: 0 0 24px;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(3.5rem, 5vw, 6rem);
+
+  font-weight: 500;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.04em;
+}
+
+.archive-featured-reverse-title p {
+  max-width: 330px;
+
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  color: rgba(11, 12, 10, 0.7);
+}
+
+/* =========================================================
+   DETAILS
+   ========================================================= */
+
+.archive-featured-reverse-details {
+  grid-column: 2;
+
+  display: flex;
+
+  gap: 36px;
+
+  margin-top: 48px;
+}
+
+.archive-featured-reverse-details .archive-meta {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: rgba(11, 12, 10, 0.45);
+}
+
+.archive-featured-reverse-details p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.archive-featured-reverse-info .archive-featured-link {
+  grid-column: 2;
+
+  justify-content: flex-start;
+
+  margin-top: 48px;
+}
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.archive-featured-reverse-image {
+  grid-column: 6 / span 7;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--archive-black);
+}
+
+.archive-featured-reverse-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 1.2s var(--ease-archive);
+}
+
+.archive-featured-reverse-image:hover img {
+  transform: scale(1.015);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .archive-featured--reverse {
+    padding-top: 40px;
+  }
+
+  .archive-featured-reverse-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 40px 16px;
+  }
+
+  .archive-featured-reverse-info {
+    grid-column: span 4;
+
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .archive-featured-reverse-image {
+    grid-column: span 4;
+
+    order: 2;
+
+    aspect-ratio: 4 / 3;
+
+    border-radius: var(--radius-md);
+  }
+
+  .archive-featured-reverse-title h2 {
+    font-size: clamp(3.2rem, 14vw, 5rem);
+  }
+
+  .archive-featured-reverse-details {
+    margin-top: 36px;
+  }
+
+  .archive-featured-reverse-info .archive-featured-link {
+    margin-top: 30px;
+  }
+}
+
+/* =========================================================
+   LOCALSEWA FEATURED — v1.9
+   Full Editorial Treatment
+   ========================================================= */
+
+.archive-featured-full {
+  position: relative;
+
+  background: var(--archive-deep-green);
+  color: var(--archive-ivory);
+
+  overflow: hidden;
+
+  padding-block: var(--section-space);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.archive-featured-full-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 70px;
+}
+
+.archive-featured-full-header-right {
+  color: rgba(243, 240, 231, 0.4);
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.archive-featured-full-intro {
+  display: grid;
+
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  gap: var(--grid-gap);
+
+  align-items: end;
+
+  margin-bottom: 55px;
+}
+
+.archive-featured-full-number {
+  grid-column: 1 / span 2;
+}
+
+.archive-featured-full-number span {
+  font-family: var(--font-display);
+
+  font-size: clamp(4rem, 6vw, 7rem);
+
+  font-weight: 500;
+
+  line-height: 0.8;
+}
+
+.archive-featured-full-heading {
+  grid-column: 4 / span 8;
+}
+
+.archive-featured-full-heading .archive-meta {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: rgba(243, 240, 231, 0.45);
+}
+
+.archive-featured-full-heading h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(5rem, 10vw, 11rem);
+
+  font-weight: 500;
+
+  line-height: 0.78;
+
+  letter-spacing: -0.05em;
+}
+
+.archive-featured-full-heading p {
+  margin: 22px 0 0;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(1.8rem, 3vw, 3.5rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.025em;
+
+  color: rgba(243, 240, 231, 0.72);
+}
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.archive-featured-full-image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--archive-black);
+}
+
+.archive-featured-full-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 1.3s var(--ease-archive);
+}
+
+.archive-featured-full-image:hover img {
+  transform: scale(1.015);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.archive-featured-full-footer {
+  display: grid;
+
+  grid-template-columns:
+    4fr
+    3fr
+    2fr;
+
+  gap: var(--grid-gap);
+
+  align-items: start;
+
+  padding-top: 28px;
+}
+
+.archive-featured-full-description p {
+  max-width: 420px;
+
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  color: rgba(243, 240, 231, 0.72);
+}
+
+/* =========================================================
+   META
+   ========================================================= */
+
+.archive-featured-full-meta {
+  display: flex;
+
+  gap: 40px;
+}
+
+.archive-featured-full-meta .archive-meta {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: rgba(243, 240, 231, 0.4);
+}
+
+.archive-featured-full-meta p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   LINK
+   ========================================================= */
+
+.archive-featured-full-link {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  transition: opacity var(--transition-fast);
+}
+
+.archive-featured-full-link:hover {
+  opacity: 0.55;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .archive-featured-full-heading {
+    grid-column: 3 / span 6;
+  }
+
+  .archive-featured-full-footer {
+    grid-template-columns: 3fr 2fr 1fr;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .archive-featured-full {
+    padding-block: 80px;
+  }
+
+  .archive-featured-full-header {
+    margin-bottom: 45px;
+  }
+
+  .archive-featured-full-header-right {
+    display: none;
+  }
+
+  .archive-featured-full-intro {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+
+    margin-bottom: 40px;
+  }
+
+  .archive-featured-full-number {
+    grid-column: span 1;
+  }
+
+  .archive-featured-full-number span {
+    font-size: 32px;
+  }
+
+  .archive-featured-full-heading {
+    grid-column: 2 / span 3;
+  }
+
+  .archive-featured-full-heading h2 {
+    font-size: clamp(4rem, 18vw, 7rem);
+  }
+
+  .archive-featured-full-heading p {
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+
+    margin-top: 18px;
+  }
+
+  .archive-featured-full-image {
+    aspect-ratio: 4 / 3;
+
+    border-radius: var(--radius-md);
+  }
+
+  .archive-featured-full-footer {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 28px 16px;
+
+    padding-top: 22px;
+  }
+
+  .archive-featured-full-description {
+    grid-column: 2 / span 3;
+  }
+
+  .archive-featured-full-meta {
+    grid-column: 2 / span 3;
+  }
+
+  .archive-featured-full-link {
+    grid-column: 2 / span 3;
+
+    justify-content: flex-start;
+  }
+}
