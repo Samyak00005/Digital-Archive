@@ -1,0 +1,954 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+/* =========================================================
+   THE DIGITAL ARCHIVE
+   Global Design System
+   Version: v1.5.1
+   ========================================================= */
+
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+
+:root {
+  /* ---------- Colors ---------- */
+
+  --archive-black: #0b0c0a;
+  --archive-ivory: #f3f0e7;
+  --archive-green: #536b3a;
+  --archive-deep-green: #26351f;
+  --archive-gray: #a7a49b;
+  --archive-white: #ffffff;
+
+  /* ---------- Typography ---------- */
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", Arial, sans-serif;
+
+  /* ---------- Display Sizes ---------- */
+
+  --text-display-xl: clamp(5rem, 14vw, 14rem);
+  --text-display-lg: clamp(4rem, 9vw, 9rem);
+  --text-display-md: clamp(3rem, 6vw, 7rem);
+  --text-heading: clamp(2rem, 4vw, 4rem);
+
+  /* ---------- Layout ---------- */
+
+  --page-margin: 5vw;
+  --content-max-width: 1600px;
+
+  --grid-columns: 12;
+  --grid-gap: 24px;
+
+  /* ---------- Section Spacing ---------- */
+
+  --section-space: clamp(100px, 12vw, 200px);
+
+  /* ---------- Radius ---------- */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  /* ---------- Motion ---------- */
+
+  --ease-archive: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --transition-fast: 180ms var(--ease-archive);
+  --transition-medium: 450ms var(--ease-archive);
+  --transition-slow: 800ms var(--ease-archive);
+}
+
+/* =========================================================
+   RESET / BASE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+
+  background: var(--archive-ivory);
+  color: var(--archive-black);
+
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Form Elements ---------- */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- Images ---------- */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------- Buttons ---------- */
+
+button {
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+.archive-display-xl {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: 500;
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+}
+
+.archive-display-lg {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: 500;
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+}
+
+.archive-display-md {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+}
+
+.archive-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-heading);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+}
+
+/* ---------- Body ---------- */
+
+.archive-body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.archive-body-lg {
+  font-family: var(--font-sans);
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.45;
+}
+
+/* ---------- Metadata ---------- */
+
+.archive-meta {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   LAYOUT SYSTEM
+   ========================================================= */
+
+.archive-page {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--page-margin);
+}
+
+/* ---------- Global Grid ---------- */
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+/* ---------- Sections ---------- */
+
+.archive-section {
+  position: relative;
+  width: 100%;
+  padding-block: var(--section-space);
+}
+
+/* ---------- Full Width ---------- */
+
+.archive-full {
+  width: 100%;
+}
+
+/* =========================================================
+   CONTENT WIDTHS
+   ========================================================= */
+
+.archive-content-sm {
+  width: min(100%, 560px);
+}
+
+.archive-content-md {
+  width: min(100%, 800px);
+}
+
+.archive-content-lg {
+  width: min(100%, 1100px);
+}
+
+/* =========================================================
+   GRID SPANS
+   ========================================================= */
+
+.grid-span-1 {
+  grid-column: span 1;
+}
+
+.grid-span-2 {
+  grid-column: span 2;
+}
+
+.grid-span-3 {
+  grid-column: span 3;
+}
+
+.grid-span-4 {
+  grid-column: span 4;
+}
+
+.grid-span-5 {
+  grid-column: span 5;
+}
+
+.grid-span-6 {
+  grid-column: span 6;
+}
+
+.grid-span-7 {
+  grid-column: span 7;
+}
+
+.grid-span-8 {
+  grid-column: span 8;
+}
+
+.grid-span-9 {
+  grid-column: span 9;
+}
+
+.grid-span-10 {
+  grid-column: span 10;
+}
+
+.grid-span-11 {
+  grid-column: span 11;
+}
+
+.grid-span-12 {
+  grid-column: span 12;
+}
+
+/* =========================================================
+   COLORS / THEMES
+   ========================================================= */
+
+.archive-muted {
+  color: var(--archive-gray);
+}
+
+.archive-green {
+  color: var(--archive-green);
+}
+
+.archive-dark {
+  background: var(--archive-black);
+  color: var(--archive-ivory);
+}
+
+.archive-deep-green {
+  background: var(--archive-deep-green);
+  color: var(--archive-ivory);
+}
+
+.archive-ivory {
+  background: var(--archive-ivory);
+  color: var(--archive-black);
+}
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+.archive-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.archive-image-rounded {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.archive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.archive-link:hover {
+  opacity: 0.65;
+}
+
+.archive-link-arrow {
+  display: inline-block;
+
+  transition: transform var(--transition-fast);
+}
+
+.archive-link:hover .archive-link-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: var(--archive-black);
+  color: var(--archive-ivory);
+}
+
+/* =========================================================
+   NAVIGATION — v1.4
+   ========================================================= */
+
+.archive-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  width: 100%;
+
+  padding-top: 24px;
+}
+
+/* ---------- Navigation Inner ---------- */
+
+.archive-navbar-inner {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+
+  min-height: 40px;
+}
+
+/* ---------- Brand ---------- */
+
+.archive-navbar-brand {
+  grid-column: span 3;
+
+  width: fit-content;
+
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+
+  transition: opacity var(--transition-fast);
+}
+
+.archive-navbar-brand:hover {
+  opacity: 0.55;
+}
+
+/* ---------- Navigation Links ---------- */
+
+.archive-navbar-links {
+  grid-column: 6 / span 4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 3vw, 48px);
+}
+
+.archive-navbar-link {
+  position: relative;
+
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+
+  transition: opacity var(--transition-fast);
+}
+
+.archive-navbar-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 100%;
+  height: 1px;
+
+  background: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: right;
+
+  transition: transform var(--transition-medium);
+}
+
+.archive-navbar-link:hover {
+  opacity: 0.7;
+}
+
+.archive-navbar-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------- Navigation Meta ---------- */
+
+.archive-navbar-meta {
+  grid-column: 11 / span 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.archive-navbar-year {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- Menu ---------- */
+
+.archive-navbar-menu {
+  display: none;
+
+  width: 28px;
+  height: 28px;
+
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 5px;
+}
+
+.archive-navbar-menu span {
+  display: block;
+
+  width: 22px;
+  height: 1px;
+
+  background: currentColor;
+
+  transition:
+    width var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.archive-navbar-menu span:last-child {
+  width: 14px;
+}
+
+/* ---------- Dark Navigation ---------- */
+
+.archive-navbar--dark {
+  color: var(--archive-ivory);
+}
+
+/* =========================================================
+   HERO — v1.5
+   ========================================================= */
+
+.archive-hero {
+  position: relative;
+
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background: var(--archive-black);
+  color: var(--archive-ivory);
+}
+
+.archive-hero-inner {
+  position: relative;
+
+  min-height: 100svh;
+}
+
+/* ---------- Hero Background ---------- */
+
+.archive-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at 70% 40%,
+    rgba(83, 107, 58, 0.14),
+    transparent 38%
+  );
+
+  pointer-events: none;
+}
+
+.archive-hero-noise {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.035;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+
+  pointer-events: none;
+}
+
+/* ---------- Hero Intro ---------- */
+
+.archive-hero-intro {
+  position: absolute;
+
+  top: 23%;
+  right: 0;
+
+  width: 240px;
+}
+
+.archive-hero-intro .archive-meta {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: rgba(243, 240, 231, 0.55);
+}
+
+.archive-hero-intro p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.5;
+
+  color: rgba(243, 240, 231, 0.8);
+}
+
+/* ---------- Hero Title ---------- */
+
+.archive-hero-title-wrap {
+  position: absolute;
+
+  left: var(--page-margin);
+  bottom: 13%;
+
+  z-index: 2;
+}
+
+.archive-hero-title {
+  margin: 0;
+
+  max-width: 1000px;
+
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 11vw, 11.5rem);
+  font-weight: 500;
+
+  line-height: 0.78;
+  letter-spacing: -0.055em;
+}
+
+/* ---------- Hero Index ---------- */
+
+.archive-hero-index {
+  position: absolute;
+
+  left: 0;
+  bottom: 5%;
+
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.archive-hero-number {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.archive-hero-index .archive-meta {
+  color: rgba(243, 240, 231, 0.55);
+}
+
+/* ---------- Hero Project ---------- */
+
+.archive-hero-project {
+  position: absolute;
+
+  right: var(--page-margin);
+  bottom: 7%;
+
+  z-index: 5;
+
+  width: min(31vw, 470px);
+
+  color: var(--archive-black);
+
+  transition:
+    transform var(--transition-medium),
+    box-shadow var(--transition-medium);
+}
+
+.archive-hero-project:hover {
+  transform: translateY(-10px);
+}
+
+/* ---------- Project Image ---------- */
+
+.archive-hero-project-image {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--archive-deep-green);
+}
+
+.archive-hero-project-image img {
+  transition: transform 900ms var(--ease-archive);
+}
+
+.archive-hero-project:hover .archive-hero-project-image img {
+  transform: scale(1.025);
+}
+
+.archive-hero-project-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(to bottom, transparent 55%, rgba(0, 0, 0, 0.3));
+}
+
+/* ---------- Project Info ---------- */
+
+.archive-hero-project-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 4px 0;
+
+  color: var(--archive-ivory);
+}
+
+.archive-hero-project-info .archive-meta {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: rgba(243, 240, 231, 0.5);
+}
+
+.archive-hero-project-info h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* ---------- Hero Scroll ---------- */
+
+.archive-hero-scroll {
+  position: absolute;
+
+  left: 50%;
+  bottom: 5%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  transform: translateX(-50%);
+
+  color: rgba(243, 240, 231, 0.7);
+
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.archive-hero-scroll:hover {
+  color: var(--archive-ivory);
+  transform: translate(-50%, -2px);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  :root {
+    --page-margin: 4vw;
+
+    --grid-columns: 8;
+    --grid-gap: 20px;
+
+    --section-space: clamp(90px, 10vw, 150px);
+  }
+
+  /* ---------- Navigation ---------- */
+
+  .archive-navbar-inner {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .archive-navbar-brand {
+    grid-column: span 2;
+  }
+
+  .archive-navbar-links {
+    grid-column: 3 / span 4;
+  }
+
+  .archive-navbar-meta {
+    grid-column: 7 / span 2;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .archive-hero-intro {
+    top: 20%;
+    right: 4vw;
+  }
+
+  .archive-hero-title {
+    font-size: clamp(5rem, 13vw, 9rem);
+  }
+
+  .archive-hero-project {
+    width: min(38vw, 400px);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  :root {
+    --page-margin: 5vw;
+
+    --grid-columns: 4;
+    --grid-gap: 16px;
+
+    --section-space: 80px;
+  }
+
+  /* ---------- Mobile Grid ---------- */
+
+  .grid-span-1,
+  .grid-span-2,
+  .grid-span-3,
+  .grid-span-4,
+  .grid-span-5,
+  .grid-span-6,
+  .grid-span-7,
+  .grid-span-8,
+  .grid-span-9,
+  .grid-span-10,
+  .grid-span-11,
+  .grid-span-12 {
+    grid-column: span 4;
+  }
+
+  /* ---------- Mobile Typography ---------- */
+
+  .archive-display-xl {
+    line-height: 0.84;
+  }
+
+  .archive-display-lg {
+    line-height: 0.88;
+  }
+
+  .archive-display-md {
+    line-height: 0.92;
+  }
+
+  /* ---------- Mobile Navigation ---------- */
+
+  .archive-navbar {
+    padding-top: 20px;
+  }
+
+  .archive-navbar-inner {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .archive-navbar-brand {
+    grid-column: span 3;
+
+    font-size: 10px;
+  }
+
+  .archive-navbar-links,
+  .archive-navbar-year {
+    display: none;
+  }
+
+  .archive-navbar-meta {
+    grid-column: 4;
+
+    display: flex;
+  }
+
+  .archive-navbar-menu {
+    display: flex;
+  }
+
+  /* ---------- Mobile Hero ---------- */
+
+  .archive-hero {
+    min-height: 100svh;
+  }
+
+  .archive-hero-intro {
+    top: 17%;
+    left: 0;
+    right: auto;
+
+    width: 210px;
+  }
+
+  .archive-hero-intro p {
+    font-size: 12px;
+  }
+
+  .archive-hero-title-wrap {
+    left: var(--page-margin);
+    bottom: 28%;
+  }
+
+  .archive-hero-title {
+    font-size: clamp(4.3rem, 19vw, 7rem);
+    line-height: 0.8;
+  }
+
+  .archive-hero-project {
+    right: var(--page-margin);
+    bottom: 7%;
+
+    width: 58vw;
+  }
+
+  .archive-hero-project-info {
+    padding-top: 10px;
+  }
+
+  .archive-hero-project-info h2 {
+    font-size: 22px;
+  }
+
+  .archive-hero-index {
+    left: var(--page-margin);
+    bottom: 7%;
+  }
+
+  .archive-hero-number {
+    font-size: 32px;
+  }
+
+  .archive-hero-scroll {
+    display: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
