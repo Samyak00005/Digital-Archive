@@ -3271,11 +3271,143 @@ button {
   }
 }
 
-
 /* =========================================================
    ALL PROJECTS PAGE — v1.10 structure update
    ========================================================= */
 
 .archive-project-index {
   min-height: 100vh;
+}
+/* =========================================================
+   COLLECTION FOOTER + IMAGE OVERLAY
+   ========================================================= */
+
+.archive-collection-image {
+  position: relative;
+  display: block;
+}
+
+.archive-collection-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(to top, rgba(11, 12, 10, 0.48), transparent 50%);
+
+  opacity: 0;
+
+  transition: opacity var(--transition-medium);
+}
+
+.archive-collection-image-label {
+  position: absolute;
+
+  right: 22px;
+  bottom: 20px;
+
+  color: var(--archive-white);
+
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity var(--transition-medium),
+    transform var(--transition-medium);
+}
+
+.archive-collection-card:hover .archive-collection-image-overlay {
+  opacity: 1;
+}
+
+.archive-collection-card:hover .archive-collection-image-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   COLLECTION FOOTER
+   ========================================================= */
+
+.archive-collection-footer {
+  display: grid;
+
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  gap: var(--grid-gap);
+
+  margin-top: clamp(90px, 12vw, 160px);
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(11, 12, 10, 0.22);
+}
+
+.archive-collection-footer > .archive-meta {
+  grid-column: 1 / span 3;
+}
+
+.archive-collection-footer p {
+  grid-column: 9 / span 3;
+
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(2rem, 3vw, 3.2rem);
+
+  line-height: 0.92;
+
+  letter-spacing: -0.025em;
+}
+
+@media (max-width: 1024px) {
+  .archive-collection-footer {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .archive-collection-footer > .archive-meta {
+    grid-column: 1 / span 3;
+  }
+
+  .archive-collection-footer p {
+    grid-column: 6 / span 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .archive-collection-image-overlay,
+  .archive-collection-image-label {
+    display: none;
+  }
+
+  .archive-collection-footer {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+    margin-top: 90px;
+  }
+
+  .archive-collection-footer p {
+    margin-left: auto;
+
+    max-width: 280px;
+
+    font-size: 2.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .archive-collection-image-overlay,
+  .archive-collection-image-label {
+    transition: none;
+  }
 }

@@ -4,6 +4,8 @@ function CollectionQR() {
   return (
     <section className="archive-collection" id="collections">
       <div className="archive-page">
+        {/* Header */}
+
         <div className="archive-collection-header">
           <span className="archive-meta">06 / COLLECTIONS</span>
 
@@ -12,19 +14,27 @@ function CollectionQR() {
           </span>
         </div>
 
+        {/* Intro */}
+
         <div className="archive-collection-intro">
           <div className="archive-collection-intro-label">
             <span className="archive-meta">MINI PROJECT / 01</span>
           </div>
 
-          <h2>
-            Small things,
-            <br />
-            carefully made.
-          </h2>
+          <div className="archive-collection-heading">
+            <h2>
+              Small things,
+              <br />
+              carefully made.
+            </h2>
+          </div>
         </div>
 
-        <div className="archive-collection-project">
+        {/* Project */}
+
+        <article className="archive-collection-card">
+          {/* Project Image */}
+
           <Link
             to="/project/qr-studio"
             className="archive-collection-image"
@@ -42,7 +52,13 @@ function CollectionQR() {
             </span>
           </Link>
 
+          {/* Project Information */}
+
           <div className="archive-collection-info">
+            <div className="archive-collection-number">
+              <span>01</span>
+            </div>
+
             <div className="archive-collection-title">
               <span className="archive-meta">04 / UTILITY</span>
 
@@ -54,27 +70,33 @@ function CollectionQR() {
               </p>
             </div>
 
+            {/* Details */}
+
             <div className="archive-collection-details">
               <div>
                 <span className="archive-meta">TYPE</span>
+
                 <p>Mini Project</p>
               </div>
 
               <div>
                 <span className="archive-meta">YEAR</span>
+
                 <p>2026</p>
               </div>
             </div>
 
-            <Link
-              to="/project/qr-studio"
-              className="archive-collection-link"
-            >
+            {/* CTA */}
+
+            <Link to="/project/qr-studio" className="archive-collection-link">
               <span>VIEW PROJECT</span>
-              <span>↗</span>
+
+              <span className="archive-collection-link-arrow">↗</span>
             </Link>
           </div>
-        </div>
+        </article>
+
+        {/* Collection Footer */}
 
         <div className="archive-collection-footer">
           <span className="archive-meta">COLLECTION / 01</span>
