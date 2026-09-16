@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { projects } from "../../data/projects";
+=======
+>>>>>>> b9c814780fcfb670bc0664372b0100649afbb9bc
 
 function CollectionQR() {
   const visibleCollections = projects.filter(
@@ -12,6 +15,7 @@ function CollectionQR() {
       className="bg-[var(--archive-ivory)] py-[clamp(80px,8vw,120px)] text-[var(--archive-black)]"
     >
       <div className="archive-page">
+<<<<<<< HEAD
         {/* ----- Collection Header ----- */}
 
         <header className="mb-[clamp(45px,5vw,70px)] grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,1fr)_280px] md:gap-20">
@@ -21,6 +25,27 @@ function CollectionQR() {
             </span>
 
             <h2 className="m-0 font-[var(--font-display)] text-[clamp(4rem,7vw,7.5rem)] font-medium leading-[0.8] tracking-[-0.05em]">
+=======
+        {/* Header */}
+
+        <div className="archive-collection-header">
+          <span className="archive-meta">06 / COLLECTIONS</span>
+
+          <span className="archive-meta archive-collection-header-right">
+            SMALLER WORK
+          </span>
+        </div>
+
+        {/* Intro */}
+
+        <div className="archive-collection-intro">
+          <div className="archive-collection-intro-label">
+            <span className="archive-meta">MINI PROJECT / 01</span>
+          </div>
+
+          <div className="archive-collection-heading">
+            <h2>
+>>>>>>> b9c814780fcfb670bc0664372b0100649afbb9bc
               Small things,
               <br />
               carefully made.
@@ -109,6 +134,7 @@ function CollectionQR() {
           })}
         </div>
 
+<<<<<<< HEAD
         {/* ----- Collection Footer ----- */}
 
         <footer className="mt-[70px] flex flex-col items-start gap-3 border-t border-[rgba(11,12,10,0.2)] pt-4 font-[var(--font-sans)] text-[11px] sm:flex-row sm:items-center sm:justify-between sm:gap-6">
@@ -117,6 +143,85 @@ function CollectionQR() {
             More small experiments will join the archive.
           </span>
         </footer>
+=======
+        {/* Project */}
+
+        <article className="archive-collection-card">
+          {/* Project Image */}
+
+          <Link
+            to="/project/qr-studio"
+            className="archive-collection-image"
+            aria-label="View QR Studio project"
+          >
+            <img
+              src="/archive/qr-studio/desktop.webp"
+              alt="QR Studio website preview"
+            />
+
+            <div className="archive-collection-image-overlay" />
+
+            <span className="archive-collection-image-label">
+              VIEW PROJECT ↗
+            </span>
+          </Link>
+
+          {/* Project Information */}
+
+          <div className="archive-collection-info">
+            <div className="archive-collection-number">
+              <span>01</span>
+            </div>
+
+            <div className="archive-collection-title">
+              <span className="archive-meta">04 / UTILITY</span>
+
+              <h3>QR Studio</h3>
+
+              <p>
+                A simple QR utility built to create, customize, and download QR
+                codes.
+              </p>
+            </div>
+
+            {/* Details */}
+
+            <div className="archive-collection-details">
+              <div>
+                <span className="archive-meta">TYPE</span>
+
+                <p>Mini Project</p>
+              </div>
+
+              <div>
+                <span className="archive-meta">YEAR</span>
+
+                <p>2026</p>
+              </div>
+            </div>
+
+            {/* CTA */}
+
+            <Link to="/project/qr-studio" className="archive-collection-link">
+              <span>VIEW PROJECT</span>
+
+              <span className="archive-collection-link-arrow">↗</span>
+            </Link>
+          </div>
+        </article>
+
+        {/* Collection Footer */}
+
+        <div className="archive-collection-footer">
+          <span className="archive-meta">COLLECTION / 01</span>
+
+          <p>
+            Small experiments
+            <br />
+            become part of the archive.
+          </p>
+        </div>
+>>>>>>> b9c814780fcfb670bc0664372b0100649afbb9bc
       </div>
     </section>
   );
