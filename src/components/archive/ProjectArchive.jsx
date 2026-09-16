@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { projects } from "../../data/projects";
 
 function ProjectArchive() {
+  const projectCount = String(projects.length).padStart(2, "0");
+  const archiveYear = projects[0]?.year ?? "";
+
   return (
     <section className="archive-project-index" id="archive">
       <div className="archive-page">
-        {/* Header */}
+        {/* ----- Header ----- */}
         <div className="archive-project-index-header">
           <span className="archive-meta">07 / PROJECT ARCHIVE</span>
 
@@ -15,7 +18,7 @@ function ProjectArchive() {
           </span>
         </div>
 
-        {/* Intro */}
+        {/* ----- Intro ----- */}
         <div className="archive-project-index-intro">
           <h2>
             Project
@@ -29,7 +32,7 @@ function ProjectArchive() {
           </p>
         </div>
 
-        {/* Column labels */}
+        {/* ----- Column Labels ----- */}
         <div className="archive-project-index-labels">
           <span className="archive-meta">PROJECT</span>
 
@@ -40,51 +43,74 @@ function ProjectArchive() {
           <span className="archive-meta">OPEN</span>
         </div>
 
-        {/* Project rows */}
+        {/* ----- Project Rows ----- */}
         <div className="archive-project-index-list">
-          {projects.map((project) => (
-            <Link
-              key={project.id}
-              to={`/project/${project.id}`}
-              className="archive-project-index-row"
-            >
-              <div className="archive-project-index-project">
-                <span className="archive-project-index-number">
-                  {project.number}
-                </span>
+          {projects.map((project) => {
+            const detailSlug = project.slug ?? project.id;
 
-                <div className="archive-project-index-title">
-                  <h3>{project.title}</h3>
-
-                  <span className="archive-project-index-category">
-                    {project.category}
+            const projectContent = (
+              <>
+                <div className="archive-project-index-project">
+                  <span className="archive-project-index-number">
+                    {project.number}
                   </span>
+
+                  <div className="archive-project-index-title">
+                    <h3>{project.title}</h3>
+
+                    <span className="archive-project-index-category">
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <div className="archive-project-index-type">
-                <span>{project.type}</span>
-              </div>
+                <div className="archive-project-index-type">
+                  <span>{project.type}</span>
+                </div>
 
-              <div className="archive-project-index-year">
-                <span>{project.year}</span>
-              </div>
+                <div className="archive-project-index-year">
+                  <span>{project.year}</span>
+                </div>
 
-              <div className="archive-project-index-open">
-                <span>↗</span>
-              </div>
+                <div className="archive-project-index-open">
+                  <span>{project.placeholder ? "—" : "↗"}</span>
+                </div>
 
-              {/* Hover preview */}
-              <div className="archive-project-index-preview">
-                <img src={project.image} alt="" />
-              </div>
-            </Link>
-          ))}
+                {/* ----- Hover Preview ----- */}
+                <div className="archive-project-index-preview">
+                  <img src={project.image} alt="" />
+                </div>
+              </>
+            );
+
+            if (project.placeholder) {
+              return (
+                <article
+                  key={project.id}
+                  className="archive-project-index-row archive-project-index-row--placeholder"
+                >
+                  {projectContent}
+                </article>
+              );
+            }
+
+            return (
+              <Link
+                key={project.id}
+                to={`/project/${detailSlug}`}
+                className="archive-project-index-row"
+              >
+                {projectContent}
+              </Link>
+            );
+          })}
         </div>
 
-        {/* Footer */}
+        {/* ----- Footer ----- */}
         <div className="archive-project-index-footer">
-          <span className="archive-meta">04 PROJECTS / 2026</span>
+          <span className="archive-meta">
+            {projectCount} PROJECTS / {archiveYear}
+          </span>
 
           <span className="archive-meta">MORE TO COME</span>
         </div>

@@ -4,7 +4,7 @@ import { projects } from "../../data/projects";
 function ProjectDetail() {
   const { slug } = useParams();
 
-  const project = projects.find((item) => item.id === "qr-studio");
+  const project = projects.find((item) => item.id === slug);
 
   if (!project) {
     return (
@@ -28,7 +28,7 @@ function ProjectDetail() {
 
       <section className="archive-project-detail-hero">
         <div className="archive-page">
-          {/* Top navigation */}
+          {/* ----- Top navigation ----- */}
 
           <div className="archive-project-detail-top">
             <Link to="/" className="archive-project-detail-back">
@@ -40,10 +40,10 @@ function ProjectDetail() {
             </span>
           </div>
 
-          {/* Two-column project introduction */}
+          {/* ----- Two-column project introduction ----- */}
 
           <div className="archive-project-detail-intro">
-            {/* LEFT */}
+            {/* ----- LEFT ----- */}
 
             <div className="archive-project-detail-copy">
               <span className="archive-meta">
@@ -55,7 +55,7 @@ function ProjectDetail() {
               <p>{project.description}</p>
             </div>
 
-            {/* RIGHT */}
+            {/* ----- RIGHT ----- */}
 
             <div className="archive-project-detail-visual">
               <img

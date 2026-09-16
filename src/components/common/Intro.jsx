@@ -3,12 +3,12 @@ function Intro() {
     <section className="archive-intro" id="about">
       <div className="archive-page">
         <div className="archive-intro-grid">
-          {/* Section Label */}
+          {/* ----- Section Label ----- */}
           <div className="archive-intro-label">
             <span className="archive-meta">02 / THE ARCHIVE</span>
           </div>
 
-          {/* Main Statement */}
+          {/* ----- Main Statement ----- */}
           <div className="archive-intro-statement">
             <h2>
               A collection of things
@@ -17,7 +17,7 @@ function Intro() {
             </h2>
           </div>
 
-          {/* Supporting Copy */}
+          {/* ----- Supporting Copy ----- */}
           <div className="archive-intro-copy">
             <p>
               Websites, digital products, experiments & ideas — gathered in one
@@ -25,7 +25,7 @@ function Intro() {
             </p>
           </div>
 
-          {/* Year / Continuation */}
+          {/* ----- Year / Continuation ----- */}
           <div className="archive-intro-year">
             <span className="archive-meta">2026 / ONGOING</span>
 
