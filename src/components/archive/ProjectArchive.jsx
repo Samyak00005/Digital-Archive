@@ -6,7 +6,7 @@ function ProjectArchive() {
   return (
     <section className="archive-project-index" id="archive">
       <div className="archive-page">
-        {/* Header */}
+        {/* ----- Header ----- */}
         <div className="archive-project-index-header">
           <span className="archive-meta">07 / PROJECT ARCHIVE</span>
 
@@ -15,7 +15,7 @@ function ProjectArchive() {
           </span>
         </div>
 
-        {/* Intro */}
+        {/* ----- Intro ----- */}
         <div className="archive-project-index-intro">
           <h2>
             Project
@@ -29,7 +29,7 @@ function ProjectArchive() {
           </p>
         </div>
 
-        {/* Column labels */}
+        {/* ----- Column labels ----- */}
         <div className="archive-project-index-labels">
           <span className="archive-meta">PROJECT</span>
 
@@ -40,7 +40,7 @@ function ProjectArchive() {
           <span className="archive-meta">OPEN</span>
         </div>
 
-        {/* Project rows */}
+        {/* ----- Project rows ----- */}
         <div className="archive-project-index-list">
           {projects.map((project) => (
             <Link
@@ -74,7 +74,7 @@ function ProjectArchive() {
                 <span>↗</span>
               </div>
 
-              {/* Hover preview */}
+              {/* ----- Hover preview ----- */}
               <div className="archive-project-index-preview">
                 <img src={project.image} alt="" />
               </div>
@@ -82,7 +82,7 @@ function ProjectArchive() {
           ))}
         </div>
 
-        {/* Footer */}
+        {/* ----- Footer ----- */}
         <div className="archive-project-index-footer">
           <span className="archive-meta">04 PROJECTS / 2026</span>
 

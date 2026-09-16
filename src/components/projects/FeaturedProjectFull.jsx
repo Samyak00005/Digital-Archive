@@ -2,7 +2,7 @@ function FeaturedProjectFull() {
   return (
     <section className="archive-featured-full">
       <div className="archive-page">
-        {/* Header */}
+        {/* ----- Header ----- */}
         <div className="archive-featured-full-header">
           <span className="archive-meta">05 / FEATURED PROJECT</span>
 
@@ -11,7 +11,7 @@ function FeaturedProjectFull() {
           </span>
         </div>
 
-        {/* Intro */}
+        {/* ----- Intro ----- */}
         <div className="archive-featured-full-intro">
           <div className="archive-featured-full-number">
             <span>03</span>
@@ -26,12 +26,12 @@ function FeaturedProjectFull() {
           </div>
         </div>
 
-        {/* Large Image */}
+        {/* ----- Large Image ----- */}
         <div className="archive-featured-full-image">
           <img src="/archive/localsewa/desktop.webp" alt="LocalSewa website" />
         </div>
 
-        {/* Footer Information */}
+        {/* ----- Footer Information ----- */}
         <div className="archive-featured-full-footer">
           <div className="archive-featured-full-description">
             <p>

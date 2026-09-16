@@ -10,7 +10,7 @@ function Hero() {
       <div className="archive-hero-noise" />
 
       <div className="archive-page archive-hero-inner">
-        {/* Top supporting copy */}
+        {/* ----- Top supporting copy ----- */}
         <div className="archive-hero-intro">
           <span className="archive-meta">A COLLECTION OF</span>
 
@@ -21,7 +21,7 @@ function Hero() {
           </p>
         </div>
 
-        {/* Main Title */}
+        {/* ----- Main Title ----- */}
         <div className="archive-hero-title-wrap">
           <h1 className="archive-hero-title">
             The Digital
@@ -30,14 +30,14 @@ function Hero() {
           </h1>
         </div>
 
-        {/* Archive Number */}
+        {/* ----- Archive Number ----- */}
         <div className="archive-hero-index">
           <span className="archive-hero-number">04</span>
 
           <span className="archive-meta">PROJECTS</span>
         </div>
 
-        {/* Featured Preview */}
+        {/* ----- Featured Preview ----- */}
         <a
           href="https://www.retrotoonz.in"
           target="_blank"
@@ -69,7 +69,7 @@ function Hero() {
           </div>
         </a>
 
-        {/* Scroll Indicator */}
+        {/* ----- Scroll Indicator ----- */}
         <a
           href="#work"
           className="archive-hero-scroll"

@@ -2,7 +2,7 @@ function FeaturedProject() {
   return (
     <section className="archive-featured" id="work">
       <div className="archive-page">
-        {/* Section Header */}
+        {/* ----- Section Header ----- */}
         <div className="archive-featured-header">
           <span className="archive-meta">03 / FEATURED PROJECT</span>
 
@@ -11,7 +11,7 @@ function FeaturedProject() {
           </span>
         </div>
 
-        {/* Large Project Image */}
+        {/* ----- Large Project Image ----- */}
         <div className="archive-featured-image">
           <img
             src="/archive/retrotoonz/desktop.webp"
@@ -21,21 +21,21 @@ function FeaturedProject() {
           <div className="archive-featured-image-overlay" />
         </div>
 
-        {/* Project Information */}
+        {/* ----- Project Information ----- */}
         <div className="archive-featured-info">
-          {/* Number */}
+          {/* ----- Number ----- */}
           <div className="archive-featured-number">
             <span>01</span>
           </div>
 
-          {/* Title */}
+          {/* ----- Title ----- */}
           <div className="archive-featured-title">
             <h2>RetroToonz</h2>
 
             <span className="archive-meta">Streaming Platform</span>
           </div>
 
-          {/* Description */}
+          {/* ----- Description ----- */}
           <div className="archive-featured-description">
             <p>
               A cartoon streaming platform built around a nostalgic viewing
@@ -43,7 +43,7 @@ function FeaturedProject() {
             </p>
           </div>
 
-          {/* Metadata */}
+          {/* ----- Metadata ----- */}
           <div className="archive-featured-meta">
             <div>
               <span className="archive-meta">TYPE</span>
@@ -58,7 +58,7 @@ function FeaturedProject() {
             </div>
           </div>
 
-          {/* CTA */}
+          {/* ----- CTA ----- */}
           <a
             href="https://www.retrotoonz.in"
             target="_blank"

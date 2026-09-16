@@ -11,7 +11,7 @@ function FeaturedProjectReverse() {
         </div>
 
         <div className="archive-featured-reverse-grid">
-          {/* Project Information */}
+          {/* ----- Project Information ----- */}
           <div className="archive-featured-reverse-info">
             <div className="archive-featured-number">
               <span>02</span>
@@ -49,7 +49,7 @@ function FeaturedProjectReverse() {
             </a>
           </div>
 
-          {/* Project Image */}
+          {/* ----- Project Image ----- */}
           <div className="archive-featured-reverse-image">
             <img src="/archive/heywalls/desktop.webp" alt="Heywalls website" />
           </div>
