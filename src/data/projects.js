@@ -16,6 +16,7 @@ export const projects = [
     theme: "dark",
     featured: true,
     collection: false,
+    gallery: [],
   },
 
   {
@@ -33,6 +34,7 @@ export const projects = [
     theme: "light",
     featured: true,
     collection: false,
+    gallery: [],
   },
 
   {
@@ -50,6 +52,7 @@ export const projects = [
     theme: "green",
     featured: true,
     collection: false,
+    gallery: [],
   },
 
   {
@@ -69,6 +72,7 @@ export const projects = [
     collection: true,
     placeholder: false,
     slug: "qr-studio",
+    gallery: [],
   },
 
   {
@@ -87,6 +91,7 @@ export const projects = [
     featured: false,
     collection: true,
     placeholder: true,
+    gallery: [],
   },
 
   {
@@ -105,6 +110,7 @@ export const projects = [
     featured: false,
     collection: true,
     placeholder: true,
+    gallery: [],
   }
 
 ];

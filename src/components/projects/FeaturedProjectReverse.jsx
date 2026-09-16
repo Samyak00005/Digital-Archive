@@ -42,7 +42,12 @@ function FeaturedProjectReverse() {
               </div>
             </div>
 
-            <a href="#" className="archive-featured-link">
+            <a
+              href="https://heywalls.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+              className="archive-featured-link"
+            >
               <span>VIEW PROJECT</span>
 
               <span className="archive-featured-link-arrow">↗</span>

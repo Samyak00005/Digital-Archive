@@ -1,50 +1,44 @@
-# React + Vite
+# The Digital Archive
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A collection of websites, digital products, experiments & ideas.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- React
+- Vite
+- Tailwind CSS v4
+- React Router
+- HugeIcons
+- Framer Motion
 
 ## Routes
 
 - `/` — The Digital Archive homepage
 - `/projects` — All Projects archive
 - `/project/:slug` — Individual project detail
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> b49be28d93cab7d0a5e67d2ad068f9515245ef92
 
-### Collections data
+## Data
 
-Mini projects displayed in the Collections section are stored in
-`src/data/collections.js`. The three placeholder entries are temporary
-dummy data and can be replaced with real mini projects later.
+All projects are stored in:
 
-### v1.10.3
+`src/data/projects.js`
 
-Collections redesigned as a compact editorial grid rather than a full-screen
-feature section. Desktop uses four contained cards, with responsive two-column
-and one-column layouts on smaller screens.
+Featured projects use `featured: true`. Smaller collection work uses
+`collection: true`.
 
-### v1.10.4
+## Project Structure
 
-- Collections redesigned as a compact three-project horizontal grid.
-- Collection heading moved to the left beneath the section label.
-- Project visuals use controlled 4:3 aspect ratios.
-- Stylesheet and source comments use the `/* ----- Comment ----- */` format consistently.
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b9c814780fcfb670bc0664372b0100649afbb9bc
->>>>>>> b49be28d93cab7d0a5e67d2ad068f9515245ef92
+- `src/components/hero` — Homepage hero
+- `src/components/common` — Shared homepage sections
+- `src/components/projects` — Featured projects and project details
+- `src/components/collections` — Collections section
+- `src/components/archive` — All Projects archive
+- `src/data` — Project data
+- `src/styles/global.css` — Global design tokens, base styles, and legacy shared layout styles
+
+## Current Phase
+
+v1.12 — Project Details / clean baseline
+
+The existing visual direction is intentionally preserved. No broad visual-ratio
+audit is included in this phase.
