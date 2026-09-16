@@ -20,6 +20,10 @@ If you are developing a production application, we recommend using TypeScript wi
 - `/` — The Digital Archive homepage
 - `/projects` — All Projects archive
 - `/project/:slug` — Individual project detail
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b49be28d93cab7d0a5e67d2ad068f9515245ef92
 
 ### Collections data
 
@@ -39,3 +43,8 @@ and one-column layouts on smaller screens.
 - Collection heading moved to the left beneath the section label.
 - Project visuals use controlled 4:3 aspect ratios.
 - Stylesheet and source comments use the `/* ----- Comment ----- */` format consistently.
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b9c814780fcfb670bc0664372b0100649afbb9bc
+>>>>>>> b49be28d93cab7d0a5e67d2ad068f9515245ef92
