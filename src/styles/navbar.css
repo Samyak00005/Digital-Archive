@@ -1,0 +1,143 @@
+/* ----- NAVIGATION — v1.4 ----- */
+
+.archive-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  width: 100%;
+
+  padding-top: 24px;
+}
+
+/* ----- Navigation Inner ----- */
+
+.archive-navbar-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+
+  min-height: 40px;
+}
+
+/* ----- Brand ----- */
+
+.archive-navbar-brand {
+  grid-column: span 3;
+  width: fit-content;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  transition: opacity var(--transition-fast);
+}
+
+.archive-navbar-brand:hover {
+  opacity: 0.55;
+}
+
+/* ----- Navigation Links ----- */
+
+.archive-navbar-links {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 3vw, 48px);
+  transform: translateY(-50%);
+}
+
+.archive-navbar-link {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  transition: opacity var(--transition-fast);
+}
+
+.archive-navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-medium);
+}
+
+.archive-navbar-link:hover {
+  opacity: 0.7;
+}
+
+.archive-navbar-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ----- Navigation Meta ----- */
+
+.archive-navbar-meta {
+  grid-column: 11 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.archive-navbar-year {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+/* ----- Menu ----- */
+
+.archive-navbar-menu {
+  display: none;
+  width: 28px;
+  height: 28px;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 5px;
+}
+
+.archive-navbar-menu span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: currentColor;
+  transition:
+    width var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.archive-navbar-menu span:last-child {
+  width: 14px;
+}
+
+/* ----- Dark Navigation ----- */
+
+.archive-navbar--dark {
+  color: var(--archive-ivory);
+}
+
+/* ----- Light Navigation ----- */
+
+.archive-navbar--light {
+  color: var(--archive-black);
+}
+

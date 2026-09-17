@@ -9,7 +9,7 @@ function CollectionQR() {
   return (
     <section
       id="collections"
-      className="bg-[var(--archive-ivory)] py-[clamp(80px,8vw,120px)] text-[var(--archive-black)]"
+      className="archive-collection aspect-[16/9] h-auto w-full overflow-hidden bg-[var(--archive-ivory)] py-[clamp(50px,5vw,80px)] text-[var(--archive-black)]"
     >
       <div className="archive-page">
         {/* ----- Collection Header ----- */}

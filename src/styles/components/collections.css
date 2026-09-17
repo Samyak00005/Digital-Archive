@@ -1,0 +1,274 @@
+/* ========================================================================== 
+   THE DIGITAL ARCHIVE — COLLECTIONS
+   Compact editorial treatment for smaller work.
+   ========================================================================== */
+
+.archive-collections {
+  position: relative;
+  width: 100%;
+  padding-block: clamp(88px, 8vw, 144px);
+  background: var(--archive-ivory);
+  color: var(--archive-black);
+}
+
+.archive-collections-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(64px, 8vw, 140px);
+  align-items: start;
+}
+
+.archive-collections-intro {
+  position: sticky;
+  top: calc(var(--navbar-height, 72px) + 36px);
+}
+
+.archive-collections-intro h2 {
+  max-width: 680px;
+  margin: clamp(26px, 3vw, 44px) 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 6vw, 7.1rem);
+  font-weight: 500;
+  line-height: 0.82;
+  letter-spacing: -0.055em;
+}
+
+.archive-collections-intro-copy {
+  width: min(100%, 340px);
+  margin-top: clamp(40px, 5vw, 72px);
+  padding-top: 18px;
+  border-top: 1px solid rgba(11, 12, 10, 0.18);
+}
+
+.archive-collections-intro-copy p {
+  margin: 13px 0 0;
+  color: #66635b;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.archive-collections-list {
+  border-top: 1px solid rgba(11, 12, 10, 0.2);
+}
+
+.archive-collection-card {
+  display: grid;
+  grid-template-columns: clamp(170px, 17vw, 260px) minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 44px);
+  align-items: center;
+  min-width: 0;
+  padding-block: clamp(22px, 2.4vw, 34px);
+  border-bottom: 1px solid rgba(11, 12, 10, 0.2);
+  color: inherit;
+  text-decoration: none;
+}
+
+.archive-collection-card-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid rgba(11, 12, 10, 0.12);
+  border-radius: clamp(12px, 1.1vw, 18px);
+  background: #e7e4db;
+}
+
+.archive-collection-card-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 320ms ease;
+}
+
+.archive-collection-card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: rgba(243, 240, 231, 0.94);
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.archive-collection-card--placeholder .archive-collection-card-badge {
+  opacity: 1;
+  transform: none;
+}
+
+.archive-collection-card-copy {
+  min-width: 0;
+}
+
+.archive-collection-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: clamp(14px, 1.5vw, 22px);
+}
+
+.archive-collection-card-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.archive-collection-card-heading h3 {
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 3.2vw, 4.1rem);
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.047em;
+}
+
+.archive-collection-card-arrow {
+  flex: 0 0 auto;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  transition: transform 220ms ease;
+}
+
+.archive-collection-card-copy > p {
+  width: min(100%, 470px);
+  margin: 16px 0 0;
+  color: #66635b;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.archive-collection-card:not(.archive-collection-card--placeholder):hover
+  .archive-collection-card-preview
+  img {
+  transform: scale(1.035);
+  filter: saturate(1.03);
+}
+
+.archive-collection-card:not(.archive-collection-card--placeholder):hover
+  .archive-collection-card-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.archive-collection-card:not(.archive-collection-card--placeholder):hover
+  .archive-collection-card-arrow {
+  transform: translate(3px, -3px);
+}
+
+.archive-collections-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: clamp(46px, 5vw, 72px);
+  padding-top: 16px;
+  border-top: 1px solid rgba(11, 12, 10, 0.2);
+  color: #66635b;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+@media (max-width: 1024px) {
+  .archive-collections-layout {
+    grid-template-columns: 1fr;
+    gap: 58px;
+  }
+
+  .archive-collections-intro {
+    position: static;
+  }
+
+  .archive-collections-intro h2 {
+    max-width: 760px;
+  }
+
+  .archive-collections-intro-copy {
+    width: min(100%, 430px);
+    margin-top: 38px;
+  }
+
+  .archive-collection-card {
+    grid-template-columns: minmax(190px, 0.72fr) minmax(0, 1.28fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .archive-collections {
+    padding-block: 72px 84px;
+  }
+
+  .archive-collections-layout {
+    gap: 46px;
+  }
+
+  .archive-collections-intro h2 {
+    margin-top: 22px;
+    font-size: clamp(3.4rem, 15vw, 5rem);
+    line-height: 0.86;
+  }
+
+  .archive-collection-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-block: 26px;
+  }
+
+  .archive-collection-card-preview {
+    width: min(100%, 420px);
+    aspect-ratio: 16 / 10;
+  }
+
+  .archive-collection-card-heading h3 {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+  }
+
+  .archive-collections-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 44px;
+  }
+}
+
+.archive-collection-card-placeholder-art {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  background:
+    linear-gradient(rgba(11, 12, 10, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 12, 10, 0.055) 1px, transparent 1px),
+    #e9e5da;
+  background-size: 28px 28px;
+  color: rgba(11, 12, 10, 0.72);
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.archive-collection-card-placeholder-art span:first-child {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3vw, 3.5rem);
+  font-weight: 500;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}

@@ -11,7 +11,7 @@ function ProjectArchive() {
       <div className="archive-page">
         {/* ----- Header ----- */}
         <div className="archive-project-index-header">
-          <span className="archive-meta">07 / PROJECT ARCHIVE</span>
+          <span className="archive-meta">07 / ALL PROJECTS</span>
 
           <span className="archive-meta archive-project-index-header-right">
             COMPLETE INDEX
@@ -21,9 +21,9 @@ function ProjectArchive() {
         {/* ----- Intro ----- */}
         <div className="archive-project-index-intro">
           <h2>
-            Project
+            All
             <br />
-            Archive
+            Projects
           </h2>
 
           <p>

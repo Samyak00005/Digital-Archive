@@ -1,0 +1,270 @@
+/* ----- HERO — v1.5 ----- */
+
+.archive-hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--archive-black);
+  color: var(--archive-ivory);
+}
+
+.archive-hero-inner {
+  position: relative;
+  min-height: 100svh;
+}
+
+/* ----- Hero Background ----- */
+
+.archive-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 70% 40%,
+    rgba(83, 107, 58, 0.14),
+    transparent 38%
+  );
+  pointer-events: none;
+}
+
+.archive-hero-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* ----- Hero Intro ----- */
+
+.archive-hero-intro {
+  position: absolute;
+  top: 23%;
+  right: 0;
+  width: 240px;
+}
+
+.archive-hero-intro .archive-meta {
+  display: block;
+  margin-bottom: 12px;
+  color: rgba(243, 240, 231, 0.55);
+}
+
+.archive-hero-intro p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(243, 240, 231, 0.8);
+}
+
+/* ----- Hero Title ----- */
+
+.archive-hero-title-wrap {
+  position: absolute;
+  left: var(--page-margin);
+  bottom: 13%;
+  z-index: 2;
+}
+
+.archive-hero-title {
+  margin: 0;
+  max-width: 1000px;
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 11vw, 11.5rem);
+  font-weight: 500;
+  line-height: 0.78;
+  letter-spacing: -0.055em;
+}
+
+/* ----- Hero Index ----- */
+
+.archive-hero-index {
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.archive-hero-number {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.archive-hero-index .archive-meta {
+  color: rgba(243, 240, 231, 0.55);
+}
+
+/* ----- Hero Project ----- */
+
+.archive-hero-project {
+  position: absolute;
+  right: var(--page-margin);
+  bottom: 7%;
+  z-index: 5;
+  width: min(31vw, 470px);
+  color: var(--archive-black);
+  transition:
+    transform var(--transition-medium),
+    box-shadow var(--transition-medium);
+}
+
+.archive-hero-project:hover {
+  transform: translateY(-10px);
+}
+
+/* ----- Project Image ----- */
+
+.archive-hero-project-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--archive-deep-green);
+}
+
+.archive-hero-project-image img {
+  transition: transform 900ms var(--ease-archive);
+}
+
+.archive-hero-project:hover .archive-hero-project-image img {
+  transform: scale(1.025);
+}
+
+.archive-hero-project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, rgba(0, 0, 0, 0.3));
+}
+
+/* ----- Project Info ----- */
+
+.archive-hero-project-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 4px 0;
+
+  color: var(--archive-ivory);
+}
+
+.archive-hero-project-info .archive-meta {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: rgba(243, 240, 231, 0.5);
+}
+
+.archive-hero-project-info h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* ----- Hero Scroll ----- */
+
+.archive-hero-scroll {
+  position: absolute;
+
+  left: 50%;
+  bottom: 5%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  transform: translateX(-50%);
+
+  color: rgba(243, 240, 231, 0.7);
+
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.archive-hero-scroll:hover {
+  color: var(--archive-ivory);
+  transform: translate(-50%, -2px);
+}
+
+/* ----- RESPONSIVE ----- */
+
+@media (max-width: 1024px) {
+  .archive-hero-intro {
+    top: 20%;
+    right: 4vw;
+  }
+
+  .archive-hero-title {
+    font-size: clamp(5rem, 13vw, 9rem);
+  }
+
+  .archive-hero-project {
+    width: min(38vw, 400px);
+  }
+}
+
+@media (max-width: 768px) {
+  .archive-hero {
+    min-height: 100svh;
+  }
+
+  .archive-hero-intro {
+    top: 17%;
+    left: 0;
+    right: auto;
+
+    width: 210px;
+  }
+
+  .archive-hero-intro p {
+    font-size: 12px;
+  }
+
+  .archive-hero-title-wrap {
+    left: var(--page-margin);
+    bottom: 28%;
+  }
+
+  .archive-hero-title {
+    font-size: clamp(4.3rem, 19vw, 7rem);
+    line-height: 0.8;
+  }
+
+  .archive-hero-project {
+    right: var(--page-margin);
+    bottom: 7%;
+
+    width: 58vw;
+  }
+
+  .archive-hero-project-info {
+    padding-top: 10px;
+  }
+
+  .archive-hero-project-info h2 {
+    font-size: 22px;
+  }
+
+  .archive-hero-index {
+    left: var(--page-margin);
+    bottom: 7%;
+  }
+
+  .archive-hero-number {
+    font-size: 32px;
+  }
+
+  .archive-hero-scroll {
+    display: none;
+  }
+}

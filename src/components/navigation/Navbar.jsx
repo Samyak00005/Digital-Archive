@@ -1,8 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+import { projects } from "../../data/projects";
 
 function Navbar() {
+  const location = useLocation();
+
+  const projectSlug = location.pathname.startsWith("/project/")
+    ? location.pathname.split("/")[2]
+    : null;
+
+  const project = projectSlug
+    ? projects.find((item) => item.id === projectSlug || item.slug === projectSlug)
+    : null;
+
+  const theme = project?.theme ?? "dark";
+  const isLight = theme === "light";
+
   return (
-    <header className="archive-navbar archive-navbar--dark">
+    <header className={`archive-navbar ${isLight ? "archive-navbar--light" : "archive-navbar--dark"}`}>
       <div className="archive-page">
         <nav className="archive-navbar-inner">
           <Link
@@ -17,19 +32,16 @@ function Navbar() {
             <Link to="/#work" className="archive-navbar-link">
               WORK
             </Link>
-
             <Link to="/#collections" className="archive-navbar-link">
               COLLECTIONS
             </Link>
-
             <Link to="/projects" className="archive-navbar-link">
-              ARCHIVE
+              ALL PROJECTS
             </Link>
           </div>
 
           <div className="archive-navbar-meta">
             <span className="archive-navbar-year">2026</span>
-
             <button
               type="button"
               className="archive-navbar-menu"

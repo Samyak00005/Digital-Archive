@@ -1,16 +1,22 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import App from "./App";
-import AllProjects from "./components/archive/AllProjects";
-import ProjectDetail from "./components/projects/ProjectDetail";
+import ScrollToHash from "./components/layout/ScrollToHash";
+import SiteLayout from "./components/layout/SiteLayout";
+import AllProjectsPage from "./pages/AllProjectsPage";
+import HomePage from "./pages/HomePage";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
+      <ScrollToHash />
+
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/projects" element={<AllProjects />} />
-        <Route path="/project/:slug" element={<ProjectDetail />} />
+        <Route element={<SiteLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/projects" element={<AllProjectsPage />} />
+          <Route path="/project/:slug" element={<ProjectDetailPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

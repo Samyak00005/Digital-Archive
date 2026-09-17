@@ -1,0 +1,350 @@
+/* ----- FEATURED PROJECTS — v1.12 layout refinement ----- */
+
+.archive-featured-project {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--section-space);
+  background: var(--archive-ivory);
+  color: var(--archive-black);
+}
+
+.archive-featured-project + .archive-featured-project {
+  border-top: 1px solid rgba(11, 12, 10, 0.09);
+}
+
+/* ----- Header ----- */
+
+.archive-featured-project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(34px, 4vw, 58px);
+}
+
+.archive-featured-project-header-right {
+  color: rgba(11, 12, 10, 0.45);
+}
+
+/* ----- Alternating 12-column composition ----- */
+
+.archive-featured-project-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--grid-gap);
+  align-items: center;
+}
+
+.archive-featured-project--image-left .archive-featured-project-image {
+  grid-column: 1 / span 7;
+}
+
+.archive-featured-project--image-left .archive-featured-project-info {
+  grid-column: 9 / span 4;
+}
+
+.archive-featured-project--image-right .archive-featured-project-info {
+  grid-column: 1 / span 4;
+}
+
+.archive-featured-project--image-right .archive-featured-project-image {
+  grid-column: 6 / span 7;
+}
+
+/* ----- Image ----- */
+
+.archive-featured-project-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: #dedbd1;
+}
+
+.archive-featured-project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-archive);
+}
+
+.archive-featured-project-image:hover img {
+  transform: scale(1.015);
+}
+
+/* ----- Information ----- */
+
+.archive-featured-project-info {
+  display: grid;
+  grid-template-columns: clamp(54px, 5vw, 76px) minmax(0, 1fr);
+  gap: clamp(20px, 2.2vw, 34px);
+  align-items: start;
+}
+
+.archive-featured-project-number {
+  padding-top: 13px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 2.8vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.archive-featured-project-copy {
+  min-width: 0;
+}
+
+.archive-featured-project-kicker {
+  display: block;
+  margin-bottom: 12px;
+  color: rgba(11, 12, 10, 0.48);
+}
+
+.archive-featured-project-copy h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 5.4vw, 6.6rem);
+  font-weight: 500;
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+}
+
+.archive-featured-project-description {
+  max-width: 355px;
+  margin: 30px 0 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(11, 12, 10, 0.7);
+}
+
+.archive-featured-project-tagline {
+  max-width: 350px;
+  margin: 21px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 2.1vw, 2.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: rgba(11, 12, 10, 0.7);
+}
+
+/* ----- Metadata ----- */
+
+.archive-featured-project-details {
+  display: flex;
+  gap: clamp(34px, 4vw, 56px);
+  margin-top: clamp(48px, 5vw, 72px);
+}
+
+.archive-featured-project-details .archive-meta {
+  display: block;
+  margin-bottom: 7px;
+  color: rgba(11, 12, 10, 0.45);
+}
+
+.archive-featured-project-details p {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* ----- CTA ----- */
+
+.archive-featured-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: clamp(52px, 5.2vw, 76px);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  transition: opacity var(--transition-fast);
+}
+
+.archive-featured-project-link:hover {
+  opacity: 0.55;
+}
+
+.archive-featured-project-link-arrow {
+  font-size: 17px;
+  line-height: 0.7;
+  transition: transform var(--transition-medium);
+}
+
+.archive-featured-project-link:hover .archive-featured-project-link-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* ----- Project-specific character ----- */
+
+.archive-featured-project--retrotoonz .archive-featured-project-image {
+  background: var(--archive-black);
+}
+
+.archive-featured-project--retrotoonz .archive-featured-project-copy h2 {
+  font-size: clamp(3.8rem, 5vw, 6.15rem);
+}
+
+.archive-featured-project--heywalls {
+  padding-top: clamp(90px, 9vw, 150px);
+}
+
+.archive-featured-project--heywalls .archive-featured-project-copy h2 {
+  font-size: clamp(4rem, 5.5vw, 6.7rem);
+}
+
+.archive-featured-project--localsewa {
+  border-top: 0 !important;
+  background: var(--archive-deep-green);
+  color: var(--archive-ivory);
+}
+
+.archive-featured-project--localsewa .archive-featured-project-header-right,
+.archive-featured-project--localsewa .archive-featured-project-kicker,
+.archive-featured-project--localsewa .archive-featured-project-details .archive-meta {
+  color: rgba(243, 240, 231, 0.46);
+}
+
+.archive-featured-project--localsewa .archive-featured-project-description,
+.archive-featured-project--localsewa .archive-featured-project-tagline {
+  color: rgba(243, 240, 231, 0.72);
+}
+
+.archive-featured-project--localsewa .archive-featured-project-copy h2 {
+  font-size: clamp(3.7rem, 5vw, 6.1rem);
+}
+
+.archive-featured-project--localsewa .archive-featured-project-image {
+  background: rgba(243, 240, 231, 0.08);
+}
+
+/* ----- Tablet ----- */
+
+@media (max-width: 1100px) {
+  .archive-featured-project-grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .archive-featured-project--image-left .archive-featured-project-image {
+    grid-column: 1 / span 5;
+  }
+
+  .archive-featured-project--image-left .archive-featured-project-info {
+    grid-column: 6 / span 3;
+  }
+
+  .archive-featured-project--image-right .archive-featured-project-info {
+    grid-column: 1 / span 3;
+  }
+
+  .archive-featured-project--image-right .archive-featured-project-image {
+    grid-column: 4 / span 5;
+  }
+
+  .archive-featured-project-info {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .archive-featured-project-copy h2,
+  .archive-featured-project--retrotoonz .archive-featured-project-copy h2,
+  .archive-featured-project--localsewa .archive-featured-project-copy h2 {
+    font-size: clamp(3.2rem, 5.8vw, 5rem);
+  }
+
+  .archive-featured-project-description {
+    margin-top: 24px;
+    font-size: 14px;
+  }
+
+  .archive-featured-project-details {
+    margin-top: 38px;
+    gap: 28px;
+  }
+
+  .archive-featured-project-link {
+    margin-top: 42px;
+  }
+}
+
+/* ----- Mobile ----- */
+
+@media (max-width: 768px) {
+  .archive-featured-project {
+    padding-block: 80px;
+  }
+
+  .archive-featured-project-header {
+    margin-bottom: 26px;
+  }
+
+  .archive-featured-project-header-right {
+    display: none;
+  }
+
+  .archive-featured-project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  .archive-featured-project--image-right .archive-featured-project-info {
+    order: 2;
+  }
+
+  .archive-featured-project--image-right .archive-featured-project-image {
+    order: 1;
+  }
+
+  .archive-featured-project-image {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-md);
+  }
+
+  .archive-featured-project-info {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .archive-featured-project-number {
+    padding-top: 8px;
+    font-size: 30px;
+  }
+
+  .archive-featured-project-copy h2,
+  .archive-featured-project--retrotoonz .archive-featured-project-copy h2,
+  .archive-featured-project--heywalls .archive-featured-project-copy h2,
+  .archive-featured-project--localsewa .archive-featured-project-copy h2 {
+    font-size: clamp(3.25rem, 15vw, 5rem);
+  }
+
+  .archive-featured-project-description {
+    margin-top: 22px;
+  }
+
+  .archive-featured-project-tagline {
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
+  }
+
+  .archive-featured-project-details {
+    margin-top: 34px;
+  }
+
+  .archive-featured-project-link {
+    margin-top: 34px;
+  }
+}
+
+/* ----- v1.12 / desktop section alignment ----- */
+
+@media (min-width: 769px) {
+  .archive-featured-project {
+    display: flex;
+    align-items: center;
+  }
+
+  .archive-featured-project > .archive-page {
+    width: 100%;
+  }
+}

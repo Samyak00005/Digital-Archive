@@ -1,0 +1,166 @@
+/* ----- INTRO / MANIFESTO — v1.6 ----- */
+
+.archive-intro {
+  position: relative;
+
+  background: var(--archive-ivory);
+  color: var(--archive-black);
+
+  overflow: hidden;
+}
+
+.archive-intro-grid {
+  display: grid;
+
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  column-gap: var(--grid-gap);
+  row-gap: 40px;
+
+
+  align-content: center;
+
+  padding-block: var(--section-space);
+}
+
+/* ----- INTRO — LABEL ----- */
+
+.archive-intro-label {
+  grid-column: 1 / span 3;
+
+  align-self: start;
+}
+
+/* ----- INTRO — STATEMENT ----- */
+
+.archive-intro-statement {
+  grid-column: 4 / span 8;
+}
+
+.archive-intro-statement h2 {
+  margin: 0;
+
+  max-width: 1000px;
+
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 7.5vw, 8rem);
+  font-weight: 500;
+
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+}
+
+/* ----- INTRO — COPY ----- */
+
+.archive-intro-copy {
+  grid-column: 4 / span 4;
+
+  margin-top: 20px;
+}
+
+.archive-intro-copy p {
+  margin: 0;
+
+  max-width: 430px;
+
+  font-size: clamp(16px, 1.35vw, 20px);
+  line-height: 1.5;
+
+  color: rgba(11, 12, 10, 0.72);
+}
+
+/* ----- INTRO — YEAR ----- */
+
+.archive-intro-year {
+  grid-column: 10 / span 3;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-top: 24px;
+}
+
+.archive-intro-year .archive-meta {
+  color: rgba(11, 12, 10, 0.5);
+}
+
+.archive-intro-arrow {
+  display: inline-flex;
+
+  font-size: 28px;
+  line-height: 1;
+
+  transition: transform var(--transition-medium);
+}
+
+.archive-intro-year:hover .archive-intro-arrow {
+  transform: translateY(6px);
+}
+
+/* ----- INTRO — TABLET ----- */
+
+@media (max-width: 1024px) {
+  .archive-intro-grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .archive-intro-label {
+    grid-column: 1 / span 2;
+  }
+
+  .archive-intro-statement {
+    grid-column: 3 / span 6;
+  }
+
+  .archive-intro-copy {
+    grid-column: 3 / span 4;
+  }
+
+  .archive-intro-year {
+    grid-column: 7 / span 2;
+  }
+}
+
+/* ----- INTRO — MOBILE ----- */
+
+@media (max-width: 768px) {
+  .archive-intro-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+
+    row-gap: 50px;
+
+    padding-block: 100px;
+  }
+
+  .archive-intro-label {
+    grid-column: span 4;
+  }
+
+  .archive-intro-statement {
+    grid-column: span 4;
+  }
+
+  .archive-intro-statement h2 {
+    font-size: clamp(3.4rem, 15vw, 5.5rem);
+
+    line-height: 0.88;
+  }
+
+  .archive-intro-copy {
+    grid-column: 1 / span 3;
+
+    margin-top: 0;
+  }
+
+  .archive-intro-copy p {
+    font-size: 16px;
+  }
+
+  .archive-intro-year {
+    grid-column: span 4;
+
+    margin-top: 10px;
+  }
+}
