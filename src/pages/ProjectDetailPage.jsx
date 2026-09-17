@@ -7,11 +7,9 @@ function ProjectDetailPage() {
   const { slug } = useParams();
 
   const publishedProjects = projects.filter((item) => !item.placeholder);
-  const projectIndex = publishedProjects.findIndex(
+  const project = publishedProjects.find(
     (item) => item.id === slug || item.slug === slug,
   );
-
-  const project = projectIndex >= 0 ? publishedProjects[projectIndex] : null;
 
   if (!project) {
     return (
@@ -30,14 +28,8 @@ function ProjectDetailPage() {
     );
   }
 
-  const previousProject =
-    projectIndex > 0 ? publishedProjects[projectIndex - 1] : null;
-  const nextProject =
-    projectIndex < publishedProjects.length - 1
-      ? publishedProjects[projectIndex + 1]
-      : null;
   const hasGallery = Array.isArray(project.gallery) && project.gallery.length > 0;
-  const detailPath = (item) => `/project/${item.slug ?? item.id}`;
+  const hasProjectUrl = project.url && project.url !== "#";
 
   return (
     <main className="project-detail">
@@ -105,6 +97,20 @@ function ProjectDetailPage() {
               </div>
             </dl>
           </div>
+
+          {hasProjectUrl && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              className="project-detail-overview-visit"
+            >
+              <span>View project</span>
+              <span className="project-detail-overview-visit-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </a>
+          )}
         </div>
       </section>
 
@@ -128,45 +134,6 @@ function ProjectDetailPage() {
           </div>
         </section>
       )}
-
-      {!project.placeholder && project.url && project.url !== "#" && (
-        <section className="project-detail-visit">
-          <div className="archive-page">
-            <a href={project.url} target="_blank" rel="noreferrer" className="project-detail-visit-link">
-              <span>Visit project</span>
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </section>
-      )}
-
-      <section className="project-detail-navigation">
-        <div className="archive-page project-detail-navigation-grid">
-          {previousProject ? (
-            <Link to={detailPath(previousProject)} className="project-detail-navigation-link project-detail-navigation-link--previous">
-              <span className="archive-meta">PREVIOUS PROJECT</span>
-              <span className="project-detail-navigation-title">{previousProject.title}</span>
-              <span className="project-detail-navigation-arrow" aria-hidden="true">↖</span>
-            </Link>
-          ) : (
-            <div className="project-detail-navigation-empty" />
-          )}
-
-          {nextProject ? (
-            <Link to={detailPath(nextProject)} className="project-detail-navigation-link project-detail-navigation-link--next">
-              <span className="archive-meta">NEXT PROJECT</span>
-              <span className="project-detail-navigation-title">{nextProject.title}</span>
-              <span className="project-detail-navigation-arrow" aria-hidden="true">↗</span>
-            </Link>
-          ) : (
-            <Link to="/projects" className="project-detail-navigation-link project-detail-navigation-link--next">
-              <span className="archive-meta">BACK TO ALL PROJECTS</span>
-              <span className="project-detail-navigation-title">All projects</span>
-              <span className="project-detail-navigation-arrow" aria-hidden="true">↗</span>
-            </Link>
-          )}
-        </div>
-      </section>
     </main>
   );
 }

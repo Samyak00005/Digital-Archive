@@ -61,6 +61,7 @@
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.08em;
+  opacity: 0.62;
   transition: opacity var(--transition-fast);
 }
 
@@ -78,13 +79,18 @@
 }
 
 .archive-navbar-link:hover {
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .archive-navbar-link:hover::after,
-.archive-navbar-link:focus-visible::after {
+.archive-navbar-link:focus-visible::after,
+.archive-navbar-link.is-active::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.archive-navbar-link.is-active {
+  opacity: 1;
 }
 
 .archive-navbar-meta {
@@ -213,4 +219,13 @@
   .archive-navbar-mobile-link:last-child {
     border-bottom: 0;
   }
+
+  .archive-navbar-mobile-link {
+    opacity: 0.62;
+  }
+
+  .archive-navbar-mobile-link.is-active {
+    opacity: 1;
+  }
 }
+

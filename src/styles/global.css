@@ -39,7 +39,7 @@
 
   /* ----- Section Spacing ----- */
 
-  --section-space: clamp(100px, 12vw, 200px);
+  --section-space: clamp(72px, 7vw, 112px);
 
   /* ----- Radius ----- */
 

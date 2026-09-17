@@ -15,7 +15,7 @@
   grid-template-columns: repeat(12, minmax(0, 1fr));
 
   column-gap: var(--grid-gap);
-  row-gap: 40px;
+  row-gap: 28px;
 
 
   align-content: center;
@@ -55,7 +55,7 @@
 .archive-intro-copy {
   grid-column: 4 / span 4;
 
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .archive-intro-copy p {
@@ -78,7 +78,7 @@
   align-items: flex-start;
   justify-content: space-between;
 
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .archive-intro-year .archive-meta {

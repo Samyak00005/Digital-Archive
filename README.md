@@ -89,17 +89,18 @@ The next roadmap phase is v1.13 — Motion.
 
 ## v1.12 Layout Refinement
 
-- Global fixed header shared across every route
+- Global fixed header shared across every route, with active page/section highlighting
 - Global footer shared across every route
 - Content-driven section heights; no global aspect-ratio rule for page sections
 - Project Details rebuilt around the approved light intro / dark overview composition
 - Aspect ratios are reserved for media frames where they improve composition
 - Collections redesigned as a compact editorial list with smaller previews
+- Desktop section spacing tightened across Intro, Featured Projects, Collections, All Projects, and Project Details; Hero remains unchanged
 
 ## v1.11 / v1.12 Closing QA
 
 - All Projects visual system preserved; placeholder rows remain intentionally non-interactive
-- Project-detail navigation now moves only between published projects
+- Previous/next project navigation removed from Project Details; external View Project CTA now lives inside the dark overview section
 - Remaining aspect-ratio-derived section heights removed; media ratios remain intentional
 - Footer compacted without changing its information architecture
 - Naming, routes, imports, data references, and component stylesheet boundaries audited

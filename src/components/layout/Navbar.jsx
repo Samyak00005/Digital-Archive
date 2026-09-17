@@ -4,18 +4,79 @@ import { Link, useLocation } from "react-router-dom";
 import "../../styles/components/navbar.css";
 
 const navigationItems = [
-  { label: "WORK", to: "/#work" },
-  { label: "COLLECTIONS", to: "/#collections" },
-  { label: "ALL PROJECTS", to: "/projects" },
+  { label: "WORK", to: "/#work", key: "work" },
+  { label: "COLLECTIONS", to: "/#collections", key: "collections" },
+  { label: "ALL PROJECTS", to: "/projects", key: "projects" },
 ];
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    if (location.pathname === "/projects" || location.pathname.startsWith("/project/")) {
+      setActiveSection("projects");
+      return undefined;
+    }
+
+    if (location.pathname !== "/") {
+      setActiveSection(null);
+      return undefined;
+    }
+
+    const updateActiveSection = () => {
+      const featuredSections = Array.from(
+        document.querySelectorAll(".archive-featured-project"),
+      );
+      const collections = document.getElementById("collections");
+
+      const navbarHeight =
+        parseFloat(
+          getComputedStyle(document.documentElement).getPropertyValue(
+            "--navbar-height",
+          ),
+        ) || 68;
+      const marker = window.scrollY + navbarHeight + window.innerHeight * 0.24;
+
+      if (collections) {
+        const top = collections.offsetTop;
+        const bottom = top + collections.offsetHeight;
+        if (marker >= top && marker < bottom) {
+          setActiveSection("collections");
+          return;
+        }
+      }
+
+      if (featuredSections.length) {
+        const first = featuredSections[0];
+        const last = featuredSections[featuredSections.length - 1];
+        const top = first.offsetTop;
+        const bottom = last.offsetTop + last.offsetHeight;
+        if (marker >= top && marker < bottom) {
+          setActiveSection("work");
+          return;
+        }
+      }
+
+      setActiveSection(null);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, [location.pathname]);
+
+  const isActive = (item) => activeSection === item.key;
 
   return (
     <header className="archive-navbar archive-navbar--dark">
@@ -31,7 +92,12 @@ function Navbar() {
 
           <div className="archive-navbar-links">
             {navigationItems.map((item) => (
-              <Link key={item.label} to={item.to} className="archive-navbar-link">
+              <Link
+                key={item.label}
+                to={item.to}
+                className={`archive-navbar-link${isActive(item) ? " is-active" : ""}`}
+                aria-current={isActive(item) ? (item.key === "projects" ? "page" : "location") : undefined}
+              >
                 {item.label}
               </Link>
             ))}
@@ -59,7 +125,12 @@ function Navbar() {
             aria-hidden={!menuOpen}
           >
             {navigationItems.map((item) => (
-              <Link key={item.label} to={item.to} className="archive-navbar-mobile-link">
+              <Link
+                key={item.label}
+                to={item.to}
+                className={`archive-navbar-mobile-link${isActive(item) ? " is-active" : ""}`}
+                aria-current={isActive(item) ? (item.key === "projects" ? "page" : "location") : undefined}
+              >
                 {item.label}
               </Link>
             ))}

@@ -4,7 +4,7 @@
   position: relative;
   background: var(--archive-black);
   color: var(--archive-ivory);
-  padding: var(--section-space) 0;
+  padding: 0 0 clamp(72px, 7vw, 112px);
 }
 
 /* ----- HEADER ----- */
@@ -14,7 +14,7 @@
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--grid-gap);
 
-  margin-bottom: clamp(80px, 10vw, 150px);
+  margin-bottom: clamp(44px, 5vw, 72px);
 }
 
 .archive-all-projects-header > .archive-meta:first-child {
@@ -35,7 +35,7 @@
 
   align-items: end;
 
-  margin-bottom: clamp(80px, 10vw, 140px);
+  margin-bottom: clamp(58px, 6vw, 92px);
 }
 
 .archive-all-projects-intro h1 {
@@ -485,5 +485,5 @@
 /* ----- v1.12 / fixed-header offset ----- */
 
 .archive-all-projects {
-  padding-top: calc(var(--section-space) + var(--navbar-height));
+  padding-top: calc(var(--navbar-height) + clamp(48px, 4.5vw, 72px));
 }
