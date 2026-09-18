@@ -2,7 +2,7 @@
 
 @import "tailwindcss";
 
-/* ----- THE DIGITAL ARCHIVE Global Design System Version: v1.13 ----- */
+/* ----- THE DIGITAL ARCHIVE Global Design System Version: v1.14 ----- */
 
 /* ----- DESIGN TOKENS ----- */
 
@@ -79,6 +79,7 @@ body {
 
 body {
   min-width: 320px;
+  overflow-x: clip;
 
   background: var(--archive-ivory);
   color: var(--archive-black);
@@ -353,23 +354,21 @@ button {
 
 @media (max-width: 1024px) {
   :root {
-    --page-margin: 4vw;
-
+    --page-margin: 4.5vw;
     --grid-columns: 8;
     --grid-gap: 20px;
-
-    --section-space: clamp(90px, 10vw, 150px);
+    --section-space: clamp(68px, 7vw, 92px);
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --page-margin: 5vw;
-
+    --page-margin: max(18px, 5vw);
+    --navbar-height: 60px;
     --grid-columns: 4;
     --grid-gap: 16px;
-
-    --section-space: 80px;
+    --section-space: 64px;
+    --radius-lg: 16px;
   }
 
   /* ----- Mobile Grid ----- */
@@ -401,6 +400,22 @@ button {
 
   .archive-display-md {
     line-height: 0.92;
+  }
+}
+
+
+@media (max-width: 480px) {
+  :root {
+    --grid-gap: 14px;
+    --section-space: 56px;
+  }
+
+  .archive-meta {
+    font-size: 10px;
+  }
+
+  .archive-body {
+    font-size: 15px;
   }
 }
 

@@ -169,3 +169,14 @@
     scale: 1 !important;
   }
 }
+
+/* ----- v1.14 MOBILE MOTION TUNING ----- */
+@media (max-width: 768px) {
+  :root {
+    --motion-distance-sm: 8px;
+    --motion-distance: 14px;
+    --motion-distance-lg: 18px;
+    --motion-enter: 560ms;
+    --motion-enter-slow: 760ms;
+  }
+}

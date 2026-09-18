@@ -19,6 +19,26 @@ function Navbar() {
   }, [location.pathname, location.hash]);
 
   useEffect(() => {
+    if (!menuOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth > 768) setMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
     if (location.pathname === "/projects" || location.pathname.startsWith("/project/")) {
       setActiveSection("projects");
       return undefined;

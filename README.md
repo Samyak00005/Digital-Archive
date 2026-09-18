@@ -82,10 +82,23 @@ global accessibility/responsive rules. Section-specific styles belong in
 
 ## Current Phase
 
-v1.13 — Motion — **Implemented / QA**
+v1.14 — Mobile / Responsive — **Implemented / QA**
 
-The approved v1.12 desktop layout remains frozen. v1.13 adds a shared, restrained
-motion language without changing section geometry or content hierarchy.
+The approved desktop layout and v1.13 motion system remain intact. v1.14 adds intentional tablet and mobile compositions without compressing the desktop design.
+
+
+## v1.14 Mobile / Responsive
+
+- Responsive design tokens tightened for tablet, mobile, and small-mobile widths
+- Mobile header/menu spacing and tap targets refined
+- Hero keeps its existing identity while scaling safely across narrow screens
+- Intro, Featured Projects, Collections, All Projects, Project Details, and Footer receive mobile-specific composition and typography
+- Featured project media uses a shallower mobile ratio to reduce excessive scrolling
+- Collection previews stay intentionally compact on mobile
+- All Projects rows become a concise two-column mobile index with no floating previews
+- Project Detail metadata, CTA, gallery, and typography stack cleanly on small screens
+- Footer remains compact and keeps its subtle backdrop blur
+- Motion distances are reduced on mobile to avoid exaggerated movement
 
 ## v1.13 Motion
 
@@ -128,6 +141,11 @@ motion language without changing section geometry or content hierarchy.
 - **v1.10 — Collections:** Complete
 - **v1.11 — All Projects:** Complete
 - **v1.12 — Clean Baseline + Layout Refinement:** Complete
-- **v1.13 — Motion:** Implemented / QA
-- **v1.14 — Mobile / Responsive:** Next
+- **v1.13 — Motion:** Complete
+- **v1.14 — Mobile / Responsive:** Implemented / QA
+- **v1.15 — Accessibility + Performance:** Next
+- **v1.16 — Backend + Project Data System:** Planned
+- **v1.17 — Private Owner Admin / Project Manager:** Planned
+- **v1.18 — Final Polish + Full QA:** Planned
+- **v1.19 — Production Release:** Planned
 

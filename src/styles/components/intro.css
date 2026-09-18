@@ -164,3 +164,45 @@
     margin-top: 10px;
   }
 }
+
+/* ----- v1.14 MOBILE / RESPONSIVE ----- */
+@media (max-width: 768px) {
+  .archive-intro-grid {
+    row-gap: 28px;
+    padding-block: var(--section-space);
+  }
+
+  .archive-intro-statement h2 {
+    font-size: clamp(3.2rem, 13vw, 4.9rem);
+    line-height: 0.9;
+  }
+
+  .archive-intro-copy {
+    grid-column: span 4;
+    max-width: 420px;
+  }
+
+  .archive-intro-year {
+    margin-top: 4px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(11, 12, 10, 0.14);
+  }
+}
+
+@media (max-width: 480px) {
+  .archive-intro-grid {
+    row-gap: 24px;
+  }
+
+  .archive-intro-statement h2 {
+    font-size: clamp(3rem, 13.5vw, 4rem);
+  }
+
+  .archive-intro-copy p {
+    font-size: 15px;
+  }
+
+  .archive-intro-arrow {
+    font-size: 22px;
+  }
+}

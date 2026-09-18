@@ -348,3 +348,87 @@
     width: 100%;
   }
 }
+
+/* ----- v1.14 MOBILE / RESPONSIVE ----- */
+@media (max-width: 768px) {
+  .archive-featured-project {
+    padding-block: var(--section-space);
+  }
+
+  .archive-featured-project-header {
+    margin-bottom: 22px;
+  }
+
+  .archive-featured-project-grid {
+    gap: 26px;
+  }
+
+  .archive-featured-project-image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .archive-featured-project-info {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .archive-featured-project-number {
+    padding-top: 7px;
+    font-size: 26px;
+  }
+
+  .archive-featured-project-copy h2,
+  .archive-featured-project--retrotoonz .archive-featured-project-copy h2,
+  .archive-featured-project--heywalls .archive-featured-project-copy h2,
+  .archive-featured-project--localsewa .archive-featured-project-copy h2 {
+    font-size: clamp(3.1rem, 13vw, 4.6rem);
+    line-height: 0.86;
+  }
+
+  .archive-featured-project-description {
+    max-width: 520px;
+    margin-top: 18px;
+    font-size: 14px;
+  }
+
+  .archive-featured-project-tagline {
+    margin-top: 12px;
+    font-size: clamp(1.45rem, 6.5vw, 2rem);
+  }
+
+  .archive-featured-project-details {
+    margin-top: 26px;
+    gap: 28px;
+  }
+
+  .archive-featured-project-link {
+    min-height: 44px;
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .archive-featured-project-grid {
+    gap: 22px;
+  }
+
+  .archive-featured-project-info {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .archive-featured-project-number {
+    font-size: 22px;
+  }
+
+  .archive-featured-project-copy h2,
+  .archive-featured-project--retrotoonz .archive-featured-project-copy h2,
+  .archive-featured-project--heywalls .archive-featured-project-copy h2,
+  .archive-featured-project--localsewa .archive-featured-project-copy h2 {
+    font-size: clamp(2.85rem, 12.6vw, 3.8rem);
+  }
+
+  .archive-featured-project-details p {
+    font-size: 12px;
+  }
+}

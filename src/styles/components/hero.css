@@ -268,3 +268,78 @@
     display: none;
   }
 }
+
+/* ----- v1.14 MOBILE / RESPONSIVE ----- */
+@media (max-width: 768px) {
+  .archive-hero,
+  .archive-hero-inner {
+    min-height: max(700px, 100svh);
+  }
+
+  .archive-hero-intro {
+    top: 14.5%;
+    width: 190px;
+  }
+
+  .archive-hero-title-wrap {
+    bottom: 30%;
+  }
+
+  .archive-hero-title {
+    font-size: clamp(4rem, 18vw, 6.4rem);
+  }
+
+  .archive-hero-project {
+    width: min(58vw, 300px);
+    bottom: 6%;
+  }
+
+  .archive-hero-index {
+    bottom: 6%;
+  }
+}
+
+@media (max-width: 480px) {
+  .archive-hero,
+  .archive-hero-inner {
+    min-height: max(680px, 100svh);
+  }
+
+  .archive-hero-intro {
+    top: 13.5%;
+    width: 178px;
+  }
+
+  .archive-hero-intro .archive-meta {
+    margin-bottom: 8px;
+  }
+
+  .archive-hero-title-wrap {
+    bottom: 31%;
+  }
+
+  .archive-hero-title {
+    font-size: clamp(3.7rem, 17.5vw, 4.8rem);
+    line-height: 0.82;
+  }
+
+  .archive-hero-project {
+    width: min(56vw, 235px);
+  }
+
+  .archive-hero-project-image {
+    border-radius: 14px;
+  }
+
+  .archive-hero-project-info h2 {
+    font-size: 19px;
+  }
+
+  .archive-hero-project-info .archive-meta {
+    font-size: 8px;
+  }
+
+  .archive-hero-number {
+    font-size: 28px;
+  }
+}

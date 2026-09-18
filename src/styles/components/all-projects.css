@@ -487,3 +487,81 @@
 .archive-all-projects {
   padding-top: calc(var(--navbar-height) + clamp(48px, 4.5vw, 72px));
 }
+
+/* ----- v1.14 MOBILE / RESPONSIVE ----- */
+@media (max-width: 768px) {
+  .archive-all-projects {
+    padding-top: calc(var(--navbar-height) + 40px);
+    padding-bottom: var(--section-space);
+  }
+}
+
+@media (max-width: 640px) {
+  .archive-all-projects {
+    padding-top: calc(var(--navbar-height) + 32px);
+    padding-bottom: 56px;
+  }
+
+  .archive-all-projects-header {
+    margin-bottom: 44px;
+  }
+
+  .archive-all-projects-intro {
+    margin-bottom: 48px;
+  }
+
+  .archive-all-projects-intro h1 {
+    font-size: clamp(4rem, 17vw, 5.8rem);
+    line-height: 0.82;
+  }
+
+  .archive-all-projects-intro p {
+    max-width: 320px;
+    margin-top: 24px;
+    margin-left: 0;
+    font-size: 13px;
+  }
+
+  .archive-all-projects-labels {
+    padding-bottom: 12px;
+  }
+
+  .archive-all-projects-row {
+    min-height: 104px;
+    gap: 12px;
+  }
+
+  .archive-all-projects-project {
+    gap: 12px;
+  }
+
+  .archive-all-projects-number {
+    font-size: 9px;
+  }
+
+  .archive-all-projects-title h2 {
+    font-size: clamp(2.45rem, 11.5vw, 3.8rem);
+    line-height: 0.9;
+  }
+
+  .archive-all-projects-category {
+    margin-top: 5px;
+    font-size: 8px;
+  }
+
+  .archive-all-projects-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .archive-all-projects-header-right {
+    display: none;
+  }
+
+  .archive-all-projects-title h2 {
+    font-size: clamp(2.25rem, 11vw, 3.2rem);
+  }
+}
