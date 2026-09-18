@@ -16,8 +16,8 @@ function Footer() {
             are coming.
           </h2>
           <p>
-            The archive is still growing — new websites, tools, experiments,
-            and ideas will find their place here.
+            The archive is still growing — new websites, tools, experiments, and
+            ideas will find their place here.
           </p>
         </div>
 

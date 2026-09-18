@@ -41,6 +41,8 @@ src/
 │       ├── Navbar.jsx
 │       ├── ScrollToHash.jsx
 │       └── SiteLayout.jsx
+├── hooks/
+│   └── useRevealOnView.js   # Shared viewport reveal observer
 ├── data/
 │   └── projects.js         # Single project data source
 ├── pages/
@@ -57,7 +59,8 @@ src/
 │   │   ├── intro.css
 │   │   ├── navbar.css
 │   │   └── project-detail.css
-│   └── global.css          # Tailwind import, tokens, reset, shared utilities
+│   ├── global.css          # Tailwind import, tokens, reset, shared utilities
+│   └── motion.css          # Shared v1.13 motion system
 ├── AppRoutes.jsx
 └── main.jsx
 ```
@@ -79,12 +82,28 @@ global accessibility/responsive rules. Section-specific styles belong in
 
 ## Current Phase
 
-v1.12 — Clean Baseline + Layout Refinement — **Complete**
+v1.13 — Motion — **Implemented / QA**
 
-The v1.12 desktop baseline is now closed after structural cleanup, CSS
-decomposition, navigation/footer refinement, project-detail refinement,
-Collections refinement, All Projects QA, and the final consistency audit.
-The next roadmap phase is v1.13 — Motion.
+The approved v1.12 desktop layout remains frozen. v1.13 adds a shared, restrained
+motion language without changing section geometry or content hierarchy.
+
+## v1.13 Motion
+
+**v1.13.1 polish:** The global footer now uses a subtle translucent backdrop blur while keeping its typography and layout sharp.
+
+**v1.13.2 polish:** Project Detail’s “View project” CTA is constrained to the right metadata column on desktop/tablet instead of spanning the full overview width.
+
+**v1.13.3 polish:** Project Detail overview and “View project” typography are reduced for better hierarchy, and the redundant footer top metadata row is removed.
+
+- Shared reveal system built with React, IntersectionObserver, and CSS motion tokens
+- Soft route entrance between Home, All Projects, and Project Detail routes
+- Fixed navbar initial entrance and existing active-state transitions preserved
+- Hero composition unchanged; only existing elements receive staggered entrance timing
+- Intro, Featured Projects, Collections, All Projects, Project Details, galleries, and footer reveal on entry
+- Featured project reveal direction follows the existing alternating left/right composition
+- Existing hover interactions preserved and complemented by subtle image scale reveals
+- `prefers-reduced-motion` users receive an immediate, non-animated presentation
+- No scroll-jacking, parallax, or layout-shifting animation
 
 
 ## v1.12 Layout Refinement
@@ -109,5 +128,6 @@ The next roadmap phase is v1.13 — Motion.
 - **v1.10 — Collections:** Complete
 - **v1.11 — All Projects:** Complete
 - **v1.12 — Clean Baseline + Layout Refinement:** Complete
-- **v1.13 — Motion:** Next
+- **v1.13 — Motion:** Implemented / QA
+- **v1.14 — Mobile / Responsive:** Next
 

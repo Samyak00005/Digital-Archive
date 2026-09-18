@@ -1,0 +1,171 @@
+/* ----- SHARED MOTION SYSTEM — v1.13 ----- */
+
+:root {
+  --motion-enter-fast: 420ms;
+  --motion-enter: 680ms;
+  --motion-enter-slow: 920ms;
+  --motion-distance-sm: 12px;
+  --motion-distance: 24px;
+  --motion-distance-lg: 34px;
+}
+
+/* Route changes use a restrained entrance only. The layout does not move. */
+.archive-route-transition {
+  animation: archive-route-enter var(--motion-enter-fast) var(--ease-archive) both;
+}
+
+@keyframes archive-route-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+  Shared reveal primitive.
+  Motion is animation-based so component-specific hover transitions remain intact.
+*/
+.archive-motion-item {
+  --motion-x: 0px;
+  --motion-y: var(--motion-distance);
+  opacity: 0;
+  transform: translate3d(var(--motion-x), var(--motion-y), 0);
+  will-change: opacity, transform;
+}
+
+.archive-motion-item[data-motion="left"] {
+  --motion-x: calc(var(--motion-distance-lg) * -1);
+  --motion-y: 0px;
+}
+
+.archive-motion-item[data-motion="right"] {
+  --motion-x: var(--motion-distance-lg);
+  --motion-y: 0px;
+}
+
+.archive-motion-item[data-motion="soft"] {
+  --motion-y: var(--motion-distance-sm);
+}
+
+.archive-motion-section.is-motion-visible .archive-motion-item {
+  animation: archive-item-reveal var(--motion-enter) var(--ease-archive) both;
+  animation-delay: var(--motion-delay, 0ms);
+}
+
+@keyframes archive-item-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(var(--motion-x), var(--motion-y), 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Image reveal: slightly oversized until its section enters. */
+.archive-motion-image {
+  overflow: hidden;
+}
+
+.archive-motion-image img {
+  scale: 1.035;
+}
+
+.archive-motion-section.is-motion-visible .archive-motion-image img {
+  animation: archive-image-settle var(--motion-enter-slow) var(--ease-archive) both;
+  animation-delay: var(--motion-delay, 0ms);
+}
+
+@keyframes archive-image-settle {
+  from {
+    scale: 1.035;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+/* Initial-load motion for persistent site chrome. */
+.archive-navbar {
+  animation: archive-navbar-enter 620ms var(--ease-archive) both;
+}
+
+@keyframes archive-navbar-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Hero keeps its approved composition; only existing elements enter. */
+.archive-hero-intro,
+.archive-hero-title-wrap,
+.archive-hero-index,
+.archive-hero-project,
+.archive-hero-scroll {
+  animation: archive-hero-enter var(--motion-enter-slow) var(--ease-archive) both;
+}
+
+.archive-hero-intro {
+  animation-delay: 100ms;
+}
+
+.archive-hero-title-wrap {
+  animation-delay: 180ms;
+}
+
+.archive-hero-index {
+  animation-delay: 320ms;
+}
+
+.archive-hero-project {
+  animation-delay: 380ms;
+}
+
+.archive-hero-scroll {
+  animation-delay: 500ms;
+}
+
+@keyframes archive-hero-enter {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .archive-route-transition,
+  .archive-navbar,
+  .archive-hero-intro,
+  .archive-hero-title-wrap,
+  .archive-hero-index,
+  .archive-hero-project,
+  .archive-hero-scroll,
+  .archive-motion-section.is-motion-visible .archive-motion-item,
+  .archive-motion-section.is-motion-visible .archive-motion-image img {
+    animation: none !important;
+  }
+
+  .archive-motion-item,
+  .archive-motion-item[data-motion="left"],
+  .archive-motion-item[data-motion="right"],
+  .archive-motion-item[data-motion="soft"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .archive-motion-image img {
+    scale: 1 !important;
+  }
+}

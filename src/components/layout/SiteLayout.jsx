@@ -1,13 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 function SiteLayout() {
+  const location = useLocation();
+
   return (
     <>
       <Navbar />
-      <Outlet />
+      <div key={location.pathname} className="archive-route-transition">
+        <Outlet />
+      </div>
       <Footer />
     </>
   );

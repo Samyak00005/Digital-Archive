@@ -1,17 +1,29 @@
+import useRevealOnView from "../../hooks/useRevealOnView";
 import "../../styles/components/intro.css";
 
 function Intro() {
+  const { ref, motionClassName } = useRevealOnView();
+
   return (
-    <section className="archive-intro" id="about">
+    <section
+      ref={ref}
+      className={`archive-intro archive-motion-section ${motionClassName}`}
+      id="about"
+    >
       <div className="archive-page">
         <div className="archive-intro-grid">
-          {/* ----- Section Label ----- */}
-          <div className="archive-intro-label">
+          <div
+            className="archive-intro-label archive-motion-item"
+            data-motion="soft"
+            style={{ "--motion-delay": "0ms" }}
+          >
             <span className="archive-meta">02 / THE ARCHIVE</span>
           </div>
 
-          {/* ----- Main Statement ----- */}
-          <div className="archive-intro-statement">
+          <div
+            className="archive-intro-statement archive-motion-item"
+            style={{ "--motion-delay": "80ms" }}
+          >
             <h2>
               A collection of things
               <br />
@@ -19,18 +31,23 @@ function Intro() {
             </h2>
           </div>
 
-          {/* ----- Supporting Copy ----- */}
-          <div className="archive-intro-copy">
+          <div
+            className="archive-intro-copy archive-motion-item"
+            data-motion="soft"
+            style={{ "--motion-delay": "150ms" }}
+          >
             <p>
               Websites, digital products, experiments & ideas — gathered in one
               place.
             </p>
           </div>
 
-          {/* ----- Year / Continuation ----- */}
-          <div className="archive-intro-year">
+          <div
+            className="archive-intro-year archive-motion-item"
+            data-motion="soft"
+            style={{ "--motion-delay": "220ms" }}
+          >
             <span className="archive-meta">2026 / ONGOING</span>
-
             <span className="archive-intro-arrow">↓</span>
           </div>
         </div>

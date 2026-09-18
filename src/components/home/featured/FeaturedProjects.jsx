@@ -1,4 +1,5 @@
 import { projects } from "../../../data/projects";
+import useRevealOnView from "../../../hooks/useRevealOnView";
 import "../../../styles/components/featured.css";
 
 const featuredLayout = [
@@ -25,19 +26,31 @@ const featuredLayout = [
 
 function FeaturedProjectSection({ config, index }) {
   const project = projects.find((item) => item.id === config.id);
+  const { ref, motionClassName } = useRevealOnView({ threshold: 0.12 });
 
   if (!project) {
     return null;
   }
 
+  const imageDirection = config.orientation === "image-left" ? "left" : "right";
+  const copyDirection = config.orientation === "image-left" ? "right" : "left";
+
   const image = (
-    <div className="archive-featured-project-image">
+    <div
+      className="archive-featured-project-image archive-motion-item archive-motion-image"
+      data-motion={imageDirection}
+      style={{ "--motion-delay": "90ms" }}
+    >
       <img src={project.image} alt={`${project.title} website`} />
     </div>
   );
 
   const information = (
-    <div className="archive-featured-project-info">
+    <div
+      className="archive-featured-project-info archive-motion-item"
+      data-motion={copyDirection}
+      style={{ "--motion-delay": "150ms" }}
+    >
       <div className="archive-featured-project-number" aria-hidden="true">
         {project.number}
       </div>
@@ -84,11 +97,15 @@ function FeaturedProjectSection({ config, index }) {
 
   return (
     <section
+      ref={ref}
       id={index === 0 ? "work" : undefined}
-      className={`archive-featured-project archive-featured-project--${config.orientation} archive-featured-project--${config.variant}`}
+      className={`archive-featured-project archive-featured-project--${config.orientation} archive-featured-project--${config.variant} archive-motion-section ${motionClassName}`}
     >
       <div className="archive-page">
-        <div className="archive-featured-project-header">
+        <div
+          className="archive-featured-project-header archive-motion-item"
+          data-motion="soft"
+        >
           <span className="archive-meta">
             {config.sectionNumber} / FEATURED PROJECT
           </span>

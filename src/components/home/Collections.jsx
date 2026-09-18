@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 
 import { projects } from "../../data/projects";
+import useRevealOnView from "../../hooks/useRevealOnView";
 import "../../styles/components/collections.css";
 
-function CollectionCard({ project }) {
+function CollectionCard({ project, index }) {
   const content = (
     <>
-      <div className="archive-collection-card-preview">
+      <div className="archive-collection-card-preview archive-motion-image">
         {project.placeholder ? (
           <div className="archive-collection-card-placeholder-art" aria-hidden="true">
             <span>{project.number}</span>
@@ -41,11 +42,16 @@ function CollectionCard({ project }) {
     </>
   );
 
+  const sharedClassName = "archive-collection-card archive-motion-item";
+  const style = { "--motion-delay": `${80 + index * 80}ms` };
+
   if (project.slug && !project.placeholder) {
     return (
       <Link
         to={`/project/${project.slug}`}
-        className="archive-collection-card"
+        className={sharedClassName}
+        data-motion="soft"
+        style={style}
       >
         {content}
       </Link>
@@ -53,22 +59,34 @@ function CollectionCard({ project }) {
   }
 
   return (
-    <article className="archive-collection-card archive-collection-card--placeholder">
+    <article
+      className={`${sharedClassName} archive-collection-card--placeholder`}
+      data-motion="soft"
+      style={style}
+    >
       {content}
     </article>
   );
 }
 
 function Collections() {
+  const { ref, motionClassName } = useRevealOnView({ threshold: 0.1 });
   const visibleCollections = projects
     .filter((project) => project.collection)
     .slice(0, 3);
 
   return (
-    <section id="collections" className="archive-collections">
+    <section
+      ref={ref}
+      id="collections"
+      className={`archive-collections archive-motion-section ${motionClassName}`}
+    >
       <div className="archive-page">
         <div className="archive-collections-layout">
-          <header className="archive-collections-intro">
+          <header
+            className="archive-collections-intro archive-motion-item"
+            data-motion="left"
+          >
             <span className="archive-meta">06 / COLLECTIONS</span>
 
             <h2>
@@ -87,13 +105,17 @@ function Collections() {
           </header>
 
           <div className="archive-collections-list">
-            {visibleCollections.map((project) => (
-              <CollectionCard key={project.id} project={project} />
+            {visibleCollections.map((project, index) => (
+              <CollectionCard key={project.id} project={project} index={index} />
             ))}
           </div>
         </div>
 
-        <footer className="archive-collections-footer">
+        <footer
+          className="archive-collections-footer archive-motion-item"
+          data-motion="soft"
+          style={{ "--motion-delay": "320ms" }}
+        >
           <span className="archive-meta">
             COLLECTION / {String(visibleCollections.length).padStart(2, "0")}
           </span>

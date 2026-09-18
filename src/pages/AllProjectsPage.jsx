@@ -1,17 +1,26 @@
 import { Link } from "react-router-dom";
 
 import { projects } from "../data/projects";
+import useRevealOnView from "../hooks/useRevealOnView";
 import "../styles/components/all-projects.css";
 
 function AllProjectsPage() {
+  const { ref, motionClassName } = useRevealOnView({ threshold: 0.06 });
   const projectCount = String(projects.length).padStart(2, "0");
   const latestYear = projects[0]?.year ?? "";
 
   return (
     <main>
-      <section className="archive-all-projects" id="all-projects">
+      <section
+        ref={ref}
+        className={`archive-all-projects archive-motion-section ${motionClassName}`}
+        id="all-projects"
+      >
         <div className="archive-page">
-          <div className="archive-all-projects-header">
+          <div
+            className="archive-all-projects-header archive-motion-item"
+            data-motion="soft"
+          >
             <span className="archive-meta">07 / ALL PROJECTS</span>
 
             <span className="archive-meta archive-all-projects-header-right">
@@ -19,7 +28,10 @@ function AllProjectsPage() {
             </span>
           </div>
 
-          <div className="archive-all-projects-intro">
+          <div
+            className="archive-all-projects-intro archive-motion-item"
+            style={{ "--motion-delay": "70ms" }}
+          >
             <h1>
               All
               <br />
@@ -32,7 +44,11 @@ function AllProjectsPage() {
             </p>
           </div>
 
-          <div className="archive-all-projects-labels">
+          <div
+            className="archive-all-projects-labels archive-motion-item"
+            data-motion="soft"
+            style={{ "--motion-delay": "130ms" }}
+          >
             <span className="archive-meta">PROJECT</span>
             <span className="archive-meta">TYPE</span>
             <span className="archive-meta">YEAR</span>
@@ -40,8 +56,11 @@ function AllProjectsPage() {
           </div>
 
           <div className="archive-all-projects-list">
-            {projects.map((project) => {
+            {projects.map((project, index) => {
               const detailSlug = project.slug ?? project.id;
+              const rowStyle = {
+                "--motion-delay": `${170 + Math.min(index, 8) * 55}ms`,
+              };
 
               const projectContent = (
                 <>
@@ -82,7 +101,9 @@ function AllProjectsPage() {
                 return (
                   <article
                     key={project.id}
-                    className="archive-all-projects-row archive-all-projects-row--placeholder"
+                    className="archive-all-projects-row archive-all-projects-row--placeholder archive-motion-item"
+                    data-motion="soft"
+                    style={rowStyle}
                   >
                     {projectContent}
                   </article>
@@ -93,7 +114,9 @@ function AllProjectsPage() {
                 <Link
                   key={project.id}
                   to={`/project/${detailSlug}`}
-                  className="archive-all-projects-row"
+                  className="archive-all-projects-row archive-motion-item"
+                  data-motion="soft"
+                  style={rowStyle}
                 >
                   {projectContent}
                 </Link>
@@ -101,7 +124,11 @@ function AllProjectsPage() {
             })}
           </div>
 
-          <div className="archive-all-projects-footer">
+          <div
+            className="archive-all-projects-footer archive-motion-item"
+            data-motion="soft"
+            style={{ "--motion-delay": "520ms" }}
+          >
             <span className="archive-meta">
               {projectCount} PROJECTS / {latestYear}
             </span>
